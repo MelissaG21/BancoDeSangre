@@ -9,6 +9,9 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const citasRouter = require('./routes/citas');
 const personalesRouter = require('./routes/personales');
+const donantesRouter = require('./routes/donantes');
+const unidadesRouter = require('./routes/unidades');
+const hospitalesRouter = require('./routes/hospitales');
 
 var app = express();
 
@@ -25,7 +28,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use ('/citas',citasRouter);
-app.use('/personales',personalesRouter)
+app.use('/personales',personalesRouter);
+app.use('/donantes', donantesRouter);
+app.use('/unidades', unidadesRouter);
+app.use('/hospitales', hospitalesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
