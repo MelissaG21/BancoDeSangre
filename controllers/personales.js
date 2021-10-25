@@ -1,31 +1,108 @@
 const express =require('express');
+const Personal = require('../models/personal');
 
 function list(req, res, next) {
-    //email,name,lastName,password
-    res.send('lista del personal');
+  Personal.find().then(objs => res.status(200).json({
+    message: 'Lista de personal del sistema',
+    obj:objs
+  })).catch(ex => res.status(500).json({
+    message: 'No se pudo consultar la información del personal',
+    obj: ex
+  }));
 }
 
-function index(req,res,next){   
-    res.send(`personal del sistema con un ID = ${req.params.id}`);
+function index(req,res,next){
+  const id = req.params.id;
+    Personal.findOne({"_id":id}).then(obj => res.status(200).json({
+      message: `Personal almacenado con ID ${id}`,
+      obj: obj
+    })).catch(ex => res.status(500).json({
+      message: `No se pudo consultar la información del personal con ID ${id}`,
+      obj: ex
+    }));
 }
 
 function create(req,res,next){
-    const name = req.body.name;//implicitos o sobre el cuerpo
-    const lastName = req.body.lastName;
-    const hospitalName = req.body.hospitalName;
-    res.send(`Crear un personal nuevo con nombre ${name} , apellido ${lastName}, hospital en el que trabaja ${hospitalName}`);
+    const nombre = req.body.nombre;//implicitos o sobre el cuerpo
+    const apellido = req.body.apellido;
+    const nombreHospital = req.body.nombreHospital;
+
+    let personal = new Personal({
+      nombre: nombre,
+      apellido: apellido,
+      nombreHospital: nombreHospital
+    });
+
+    personal.save().then(obj => res.status(200).json({
+      message: 'Personal creado correctamente',
+      obj: obj
+    })).catch(ex => res.status(500).json({
+      message: 'No se pudo almacenar el personal.',
+      obj: ex
+    }));
 }
 
 function replace(req,res,next){
-    res.send(`Remplazo un personal con ID =${req.params.id} por otro.`);//params por el heather
+  const id = req.params.id;
+  let nombre = req.body.nombre ? req.body.nombre: "";
+  let apellido = req.body.apellido ? req.body.apellido: "";
+  let nombreHospital = req.body.nombreHospital ? req.body.nombreHospital: "";
+
+  let personal = new Object({
+      _nombre: nombre,
+      _apellido: apellido,
+      _nombreHospital: nombreHospital
+    });
+
+    Personal.findOneAndUpdate({"_id":id}, personal).then(obj => res.status(200).json({
+      message:"Personal reemplazado correctamente",
+      obj:obj
+    })).catch(ex => res.status(500).json({
+      message: 'No se pudo remplazar el personal',
+      obj: ex
+    }));
+
 }
 
 function edit(req,res,next){
-    res.send(`Remplazo propiedades del personal con ID =${req.params.id} por otras.`);
+  const id = req.params.id;
+  let nombre = req.body.nombre;
+  let apellido = req.body.apellido;
+  let nombreHospital = req.body.nombreHospital;
+
+  let personal = new Object();
+
+  if(nombre){
+    personal._nombre = nombre;
+  }
+
+  if(lastName){
+    personal._apellido = apellido;
+  }
+
+  if(nombreHospital){
+    personal._nombreHospital = nombreHospital;
+  }
+
+  Personal.findOneAndUpdate({"_id":id}, personal).then(obj => res.status(200).json({
+    message:"Personal actualizado correctamente",
+    obj:obj
+  })).catch(ex => res.status(500).json({
+    message: 'No se pudo actualizar el personal',
+    obj: ex
+  }));
+
 }
 
 function destroy(req,res,next){
-    res.send(`elimino un personal con ID =${req.params.id} .`);
+  const id = req.params.id;
+  Personal.remove({"_id":id}).then(obj => res.status(200).json({
+    message:"Personal eliminado correctamente",
+    obj:obj
+  })).catch(ex => res.status(500).json({
+    message: 'No se pudo eliminar el personal',
+    obj: ex
+}));
 }
 
 module.exports ={

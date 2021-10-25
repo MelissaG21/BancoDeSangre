@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const schema = mongoose.Schema({
-  _idDonador: Schema.Types.ObjectId,
+  _idDonador: mongoose.Types.ObjectId,
   _fecha: Date,
   _tipoSangre: String,
   _nombreHospital: Boolean

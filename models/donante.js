@@ -4,7 +4,7 @@ const schema = mongoose.Schema({
   _nombre: String,
   _apellido: String,
   _edad: Number,
-  _peso: Schema.Types.Decimal128,
+  _peso: mongoose.Types.Decimal128,
   _tatuajes: Boolean,
   _direccion: String,
   _tipoSangre: String
