@@ -82,7 +82,7 @@ function edit(req,res,next){
   }
 
   if(tipoUsuario){
-    user.tipoUsuario = tipoUsuario;
+    user._tipoUsuario = tipoUsuario;
   }
 
   User.findOneAndUpdate({"_id":id}, user).then(obj => res.status(200).json({
