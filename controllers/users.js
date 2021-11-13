@@ -1,4 +1,6 @@
 const express =require('express');
+const bcript =  require('bcrypt');
+const async = require('async');
 const User = require('../models/user');
 
 function list(req, res, next) {
@@ -23,24 +25,32 @@ function index(req,res,next){
 }
 
 function create(req,res,next){
-    const correo = req.body.correo;
-    const password = req.body.password;
-    const tipoUsuario = req.body.tipoUsuario;
+    let correo = req.body.correo;
+    let password = req.body.password;
+    let tipoUsuario = req.body.tipoUsuario;
 
-    let user = new User({
-      correo:correo,
-      password:password,
-      tipoUsuario:tipoUsuario
-    });
-
-    user.save().then(obj => res.status(200).json({
-      message: 'Usuario creado correctamente',
-      obj: obj
-    })).catch(ex => res.status(500).json({
-      message: 'No se pudo almacenar el usuario.',
-      obj: ex
-    }));
-
+    async.parallel({
+      salt:(callback) =>{
+        bcript.genSalt(10, callback);
+      }
+    }, (err, result) =>{
+      bcript.hash(password, result.salt,(err, hash)=>{
+        let user = new User({
+          correo:correo,
+          password:hash,
+          tipoUsuario:tipoUsuario,
+          salt:result.salt
+        });
+    
+        user.save().then(obj => res.status(200).json({
+          message: 'Usuario creado correctamente',
+          obj: obj
+        })).catch(ex => res.status(500).json({
+          message: 'No se pudo almacenar el usuario.',
+          obj: ex
+        }));
+      })
+    })
 }
 
 function replace(req,res,next){

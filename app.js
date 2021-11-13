@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const expressJwt = require('express-jwt'); 
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -13,9 +14,11 @@ const donantesRouter = require('./routes/donantes');
 const unidadesRouter = require('./routes/unidades');
 const hospitalesRouter = require('./routes/hospitales');
 
+const jwtKey = "aad574a1222540c655376f7985f8497d";
 
 const uri = "mongodb://localhost:27017/BancoDeSangre";
 mongoose.connect(uri);
+
 
 const db = mongoose.connection;
 const app = express();
@@ -37,6 +40,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(expressJwt({secret:jwtKey, algorithms:['HS256']})
+   .unless({path:["/login"]}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

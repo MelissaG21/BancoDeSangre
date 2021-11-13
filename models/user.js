@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema({
   _correo: String,
   _password: String,
-  _tipoUsuario: String
+  _tipoUsuario: String,
+  _salt:String
 });
 
 class User{
@@ -12,6 +13,7 @@ class User{
     this._correo = correo;
     this._password = password;
     this._tipoUsuario = tipoUsuario;
+    this._salt = salt;
   }
 
   get correo(){
@@ -36,6 +38,14 @@ class User{
 
   set tipoUsuario(v){
     this._tipoUsuario = v;
+  }
+
+  get salt(){
+    return this._salt;
+  }
+
+  set salt(v){
+    this._salt = v;
   }
 
 }
