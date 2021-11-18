@@ -2,9 +2,47 @@ const express =require('express');
 const bcript =  require('bcrypt');
 const async = require('async');
 const User = require('../models/user');
+const adminAbility = require('../models/adminAbility')
+const userAblility = require('../models/userAbility');
+const Profile = require('../models/profile');
+const Permission = require('../models/permission');
 
-function list(req, res, next) {
-  User.find().then(objs => res.status(200).json({
+var map = {}
+map['admin'] = adminAbility;
+map['user'] = userAblility;
+
+
+
+async function list(req, res, next) {
+  let id = req.body.id;
+  let user = await User.findOne({"_id":id});
+  let profileName;
+  var query;
+
+  user = JSON.parse(JSON.stringify(user));
+  user._profiles.forEach(async(profileId) => {
+      profileName = await Profile.findOne({"_id":profileId});
+      profileName = JSON.parse(JSON.stringify(profileName))._description;
+      try {
+          query = await User.accessibleBy(map[profileName], 'read').populate({
+              path: '_profiles',
+              populate: { path: '_permissions' }
+          });
+          res.status(200).json({
+              message: 'Lista de Usuarios del sistema',
+              obj: query
+          })
+        } catch (error) {
+          console.log(error) // ForbiddenError;
+          res.status(500).json({
+              message: 'ERROR',
+              obj: error
+          })
+        }
+  })
+
+
+  /* User.find().then(objs => res.status(200).json({
     message: 'Lista de usuarios del sistema',
     obj:objs
   })).catch(ex => res.status(500).json({
@@ -21,7 +59,7 @@ function index(req,res,next){
   })).catch(ex => res.status(500).json({
     message: `No se pudo consultar la información del usuario con ID ${id}`,
     obj: ex
-  }));
+  })); */
 }
 
 function create(req,res,next){

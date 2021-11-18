@@ -3,8 +3,11 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const { accessibleRecordsPlugin } = require('@casl/mongoose');
 const mongoose = require('mongoose');
 const expressJwt = require('express-jwt'); 
+
+mongoose.plugin(accessibleRecordsPlugin);
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -14,6 +17,8 @@ const donantesRouter = require('./routes/donantes');
 const unidadesRouter = require('./routes/unidades');
 const hospitalesRouter = require('./routes/hospitales');
 
+const app = express();
+
 const jwtKey = "aad574a1222540c655376f7985f8497d";
 
 const uri = "mongodb://localhost:27017/BancoDeSangre";
@@ -21,7 +26,7 @@ mongoose.connect(uri);
 
 
 const db = mongoose.connection;
-const app = express();
+
 
 db.on('error', ()=>{
   console.log("No se ha podido conectar a la base de datos");
