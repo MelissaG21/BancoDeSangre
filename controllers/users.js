@@ -7,14 +7,14 @@ const userAblility = require('../models/userAbility');
 const Profile = require('../models/profile');
 const Permission = require('../models/permission');
 
-var map = {}
+/* var map = {}
 map['admin'] = adminAbility;
-map['user'] = userAblility;
+map['user'] = userAblility; */
 
 
 
-async function list(req, res, next) {
-  let id = req.body.id;
+ function list(req, res, next) {
+  /*let id = req.body.id;
   let user = await User.findOne({"_id":id});
   let profileName;
   var query;
@@ -39,20 +39,19 @@ async function list(req, res, next) {
               obj: error
           })
         }
-  })
+  })*/
 
-
-  /* User.find().then(objs => res.status(200).json({
+  let page = req.params.page ? req.params.page: 1;
+  User.paginate({}, {page:page, limit:3}).then(objs => res.status(200).json({
     message: 'Lista de usuarios del sistema',
     obj:objs
   })).catch(ex => res.status(500).json({
-    message: 'No se pudo consultar la información de los usuarios',
+    message: 'No se pudo consultar la información del usuario',
     obj: ex
   }));
 }
 
-*/
-}
+
 
 function index(req,res,next){
   const id = req.params.id;
