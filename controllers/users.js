@@ -51,6 +51,9 @@ async function list(req, res, next) {
   }));
 }
 
+*/
+}
+
 function index(req,res,next){
   const id = req.params.id;
   User.findOne({"_id":id}).then(obj => res.status(200).json({
@@ -59,7 +62,7 @@ function index(req,res,next){
   })).catch(ex => res.status(500).json({
     message: `No se pudo consultar la información del usuario con ID ${id}`,
     obj: ex
-  })); */
+  })); 
 }
 
 function create(req,res,next){
