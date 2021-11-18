@@ -69,6 +69,7 @@ function create(req,res,next){
     let correo = req.body.correo;
     let password = req.body.password;
     let tipoUsuario = req.body.tipoUsuario;
+    let profiles = req.body.profiles;
 
     async.parallel({
       salt:(callback) =>{
@@ -80,6 +81,7 @@ function create(req,res,next){
           correo:correo,
           password:hash,
           tipoUsuario:tipoUsuario,
+          profiles:profiles,
           salt:result.salt
         });
     
@@ -99,11 +101,13 @@ function replace(req,res,next){
   let correo = req.body.correo ? req.body.correo:"";
   let password = req.body.password ? req.body.password:"";
   let tipoUsuario = req.body.tipoUsuario ? req.body.tipoUsuario: "";
+  let profiles = req.body.profiles ? req.body.profiles: "";
 
   let user = new Object({
     _correo: correo,
     _password: password,
-    _tipoUsuario: tipoUsuario
+    _tipoUsuario: tipoUsuario,
+    _profiles: profiles
   });
 
   User.findOneAndUpdate({"_id":id}, user).then(obj => res.status(200).json({
@@ -121,6 +125,7 @@ function edit(req,res,next){
   let correo = req.body.correo;
   let password = req.body.password;
   let tipoUsuario = req.body.tipoUsuario;
+  let profiles = req.body.profiles;
 
   let user = new Object();
 
@@ -134,6 +139,10 @@ function edit(req,res,next){
 
   if(tipoUsuario){
     user._tipoUsuario = tipoUsuario;
+  }
+
+  if(profiles){
+    user._profiles = profiles;
   }
 
   User.findOneAndUpdate({"_id":id}, user).then(obj => res.status(200).json({

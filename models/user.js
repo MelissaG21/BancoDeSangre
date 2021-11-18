@@ -18,6 +18,7 @@ class User{
     this._password = password;
     this._tipoUsuario = tipoUsuario;
     this._salt = salt;
+    this._profiles = profiles;
   }
 
   get correo(){
