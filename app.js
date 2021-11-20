@@ -47,7 +47,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(expressJwt({secret:jwtKey, algorithms:['HS256']})
-   .unless({path:["/login"]}));
+   .unless({path:["/login","/"]}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
