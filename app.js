@@ -17,6 +17,8 @@ const donantesRouter = require('./routes/donantes');
 const unidadesRouter = require('./routes/unidades');
 const hospitalesRouter = require('./routes/hospitales');
 
+const procesoRouter = require('./routes/proceso');
+const seleccionRouter = require('./routes/seleccion');
 const privacidadRouter = require('./routes/privacidad');
 const terminosRouter = require('./routes/terminos');
 
@@ -55,13 +57,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use ('/citas',citasRouter);
-app.use('/personales',personalesRouter);
+app.use('/personal',personalesRouter);
 app.use('/donantes', donantesRouter);
 app.use('/unidades', unidadesRouter);
 app.use('/hospitales', hospitalesRouter);
 
 app.use('/privacidad', privacidadRouter);
 app.use('/terminos', terminosRouter);
+app.use('/proceso', procesoRouter);
+app.use('/seleccion', seleccionRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
