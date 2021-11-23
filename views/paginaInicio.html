@@ -1,31 +1,39 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title></title>
   </head>
   <body>
     <div>
-      <a href="/paginaInicio.html"><img id="logo"src="./imagenes/Logo.jpg"width="270" height="200"></a>
+      <a href="/">
+        <img id="logo"src="/images/Logo.jpg" height="100">
+      </a>
       </div>
 
       <div>
         <center>
           <table style="border: hidden" width="1500">
-            <tbody style="border: hidden"><center>
-              <h1>Bienvenido a Heroe de Sangre</h1></center>
+            <tbody style="border: hidden">
+              <center>
+                <h1>Bienvenido a Heroe de Sangre</h1>
+              </center>
 
               <tr style="border: hidden">
-                <td style="border: hidden"><center>
-                  <img src="./imagenes/citaPrevia.jpg" width="600" height="400">
-                  <p>Podras registrarte como donante y agendar cita previa para llevar a cabo tu donación</p><center>
+                <td style="border: hidden">
+                  <center>
+                    <img src="/images/citaPrevia.jpg" width="600" height="400">
+                    <p>Podras registrarte como donante y agendar cita previa para llevar a cabo tu donación</p>
+                  <center>
                 </td>
 
-                <td style="border: hidden"><center>
-                  <h3>¿Tienes una cuenta?</h3>
-                  <button onclick="window.location.href='/login'" type="button" name="iniciarSesion">Iniciar Sesion</button>
-                  <h3>¿Eres nuevo?</h3>
-                  <button onclick="window.location.href='/seleccion'"type="button" name="Registrarse">Registrarse</button></center>
+                <td style="border: hidden">
+                  <center>
+                    <h3>¿Tienes una cuenta?</h3>
+                    <button onclick="window.location.href='/login'" type="button" name="iniciarSesion">Iniciar Sesion</button>
+                    <h3>¿Eres nuevo?</h3>
+                    <button onclick="window.location.href='/seleccion'"type="button" name="Registrarse">Registrarse</button>
+                  </center>
                 </td>
 
                 <!--<form action="/login" method = "post">
@@ -36,14 +44,24 @@
                   <input type="submit", value="Iniciar sesion">
                 </form>-->
 
-                <td style="border: hidden"><center>
-                  <img src="./imagenes/hospital.jpg" width="600" height="400">
-                  <p>Los hospitales podrán pedir unidades de sangre</p><center>
+                <td style="border: hidden">
+                  <center>
+                    <img src="/images/hospital.jpg" width="600" height="400">
+                    <p>Los hospitales podrán pedir unidades de sangre</p>
+                  <center>
                 </td>
               </tr>
             </tbody>
           </table>
         </center>
+          <footer>
+            <p style="text-align: center;">
+                <a href="/acerca">Acerca de nosotros</a>&nbsp; &nbsp;&nbsp;
+                <a href="/privacidad">Términos de privacidad</a> &nbsp; &nbsp;&nbsp;
+                <a href="/terminos">Términos y condiciones&oacute;n</a>&nbsp; &nbsp;&nbsp; 
+                <a href="/proceso">Proceso de donación</a>&nbsp; &nbsp;&nbsp;
+            </p>
+        </footer>
       </div>
 
   </body>
