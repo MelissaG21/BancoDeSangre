@@ -9,7 +9,7 @@ const path = require('path');
 
 function home(req, res, next){
     //res. render('index', {title: 'Banco de sangre c:'});
-    res.sendFile(path.resolve(__dirname,'../views/privacidad.html'));
+    res.sendFile(path.resolve(__dirname,'../views/terminos.html'));
     //res.sendFile(path.resolve(__dirname,'../views/hola.html'));
 }
 

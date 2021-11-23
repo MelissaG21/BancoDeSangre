@@ -18,6 +18,7 @@ const unidadesRouter = require('./routes/unidades');
 const hospitalesRouter = require('./routes/hospitales');
 
 const privacidadRouter = require('./routes/privacidad');
+const terminosRouter = require('./routes/terminos');
 
 const app = express();
 
@@ -48,8 +49,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(expressJwt({secret:jwtKey, algorithms:['HS256']})
-   .unless({path:["/login","/","/privacidad"]}));
+//app.use(expressJwt({secret:jwtKey, algorithms:['HS256']})
+//   .unless({path:["/login","/","/privacidad"]}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -60,6 +61,7 @@ app.use('/unidades', unidadesRouter);
 app.use('/hospitales', hospitalesRouter);
 
 app.use('/privacidad', privacidadRouter);
+app.use('/terminos', terminosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
