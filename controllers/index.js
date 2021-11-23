@@ -3,17 +3,24 @@ const bcript =  require('bcrypt');
 const async = require('async');
 const jwt = require("jsonwebtoken");
 const User = require('../models/user');
+const path = require('path');
+//const inicio = require('../views/inicio');
 
 const jwtKey = "aad574a1222540c655376f7985f8497d";
 
 function home(req, res, next){
-    res. render('index', {title: 'Banco de sangre c:'});
+    //res. render('index', {title: 'Banco de sangre c:'});
+    res.sendFile(path.resolve(__dirname,'../views/paginaInicio.html'));
+    //res.sendFile(path.resolve(__dirname,'../views/hola.html'));
 }
+
+
 
 function login(req, res, next){
     let email = req.body.email;
     let password = req.body.password; 
-    
+    //res.sendFile(path.resolve(__dirname,'../views/hola.html'));
+
     async.parallel({
         user: callback => User.findOne({"_email":email})
         .select('_password _salt')
