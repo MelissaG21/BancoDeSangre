@@ -17,6 +17,8 @@ const donantesRouter = require('./routes/donantes');
 const unidadesRouter = require('./routes/unidades');
 const hospitalesRouter = require('./routes/hospitales');
 
+const privacidadRouter = require('./routes/privacidad');
+
 const app = express();
 
 const jwtKey = "aad574a1222540c655376f7985f8497d";
@@ -47,7 +49,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(expressJwt({secret:jwtKey, algorithms:['HS256']})
-   .unless({path:["/login","/"]}));
+   .unless({path:["/login","/","/privacidad"]}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -56,6 +58,8 @@ app.use('/personales',personalesRouter);
 app.use('/donantes', donantesRouter);
 app.use('/unidades', unidadesRouter);
 app.use('/hospitales', hospitalesRouter);
+
+app.use('/privacidad', privacidadRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
