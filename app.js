@@ -22,6 +22,7 @@ const seleccionRouter = require('./routes/seleccion');
 const privacidadRouter = require('./routes/privacidad');
 const terminosRouter = require('./routes/terminos');
 const loginRouter = require('./routes/login');
+const acercaRouter = require('./routes/acerca');
 
 const app = express();
 
@@ -68,6 +69,7 @@ app.use('/terminos', terminosRouter);
 app.use('/proceso', procesoRouter);
 app.use('/seleccion', seleccionRouter); 
 app.use('/login', loginRouter); 
+app.use('/acerca', acercaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
