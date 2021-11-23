@@ -10,13 +10,13 @@ const jwtKey = "aad574a1222540c655376f7985f8497d";
 
 function home(req, res, next){
     //res. render('index', {title: 'Banco de sangre c:'});
-    res.sendFile(path.resolve(__dirname,'../views/paginaInicio.html'));
+    res.sendFile(path.resolve(__dirname,'../views/login.html'));
     //res.sendFile(path.resolve(__dirname,'../views/hola.html'));
 }
 
 
 
-/*function login(req, res, next){
+function inicio(req, res, next){
     let email = req.body.email;
     let password = req.body.password; 
     //res.sendFile(path.resolve(__dirname,'../views/hola.html'));
@@ -45,8 +45,8 @@ function home(req, res, next){
             });
         }
     });
-}*/
+}
 
 module.exports = {
-    home
+    home, inicio
 }
