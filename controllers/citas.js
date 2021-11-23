@@ -1,6 +1,10 @@
 const express =require('express');
 const Cita = require('../models/cita');
 
+function pagina(req, res, next){
+  res.sendFile(path.resolve(__dirname,'../views/citas.html'));
+}
+
 function list(req, res, next) {
     //email,name,lastName,password
     res.send('lista de citas');
@@ -120,5 +124,5 @@ function destroy(req,res,next){
 }
 
 module.exports ={
-    list, index,create,edit,replace,destroy
+    pagina,list, index,create,edit,replace,destroy
 }
