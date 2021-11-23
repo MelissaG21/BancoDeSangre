@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/personales');
+const controller = require('../controllers/personal');
 
 /* GET users listing. */
-router.get('/', controller.list);
+router.get('/', controller.pagina);
 
 router.get('/:id',controller.index);
 

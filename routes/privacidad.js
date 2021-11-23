@@ -15,6 +15,6 @@ const controller = require('../controllers/privacidad');
 
 /* GET home page. */
 
-router.get('/privacidad', controller.privacidad);
+router.get('/', controller.privacidad);
 
 module.exports = router;

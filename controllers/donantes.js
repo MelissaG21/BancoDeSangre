@@ -1,20 +1,11 @@
 const express = require('express');
+const path = require('path');
 //const { json } = require('express');
 const Donante = require('../models/donante')
 
 
-function list(req, res, next){
-    res.send('Lista de donantes del sistema');
-
-
-    Donante.find().then(objs => res.status(200).json({
-        message: "Lista de donantes del sistema",
-        obj: objs
-    })).catch(ex => res.status(500).json({
-        message: "No se pudo consultar la informacion de los donantes",
-        obj:ex
-    }));
-
+function pagina(req, res, next){
+  res.sendFile(path.resolve(__dirname,'../views/registro.html'));
 }
 
 function index(req, res, next){
@@ -151,5 +142,5 @@ function destroy(req, res, next){
 }
 
 module.exports = {
-    list, index, create, replace, edit, destroy
+    pagina, index, create, replace, edit, destroy
 }

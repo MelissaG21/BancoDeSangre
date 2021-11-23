@@ -1,14 +1,9 @@
 const express =require('express');
+const path = require('path');
 const Personal = require('../models/personal');
 
-function list(req, res, next) {
-  Personal.find().then(objs => res.status(200).json({
-    message: 'Lista de personal del sistema',
-    obj:objs
-  })).catch(ex => res.status(500).json({
-    message: 'No se pudo consultar la información del personal',
-    obj: ex
-  }));
+function pagina(req, res, next) {
+  res.sendFile(path.resolve(__dirname,'../views/registroP.html'));
 }
 
 function index(req,res,next){
@@ -106,5 +101,5 @@ function destroy(req,res,next){
 }
 
 module.exports ={
-    list, index,create,edit,replace,destroy
+    pagina, index,create,edit,replace,destroy
 }
