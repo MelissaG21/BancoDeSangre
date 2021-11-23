@@ -7,7 +7,9 @@ const schema = mongoose.Schema({
   _peso: mongoose.Types.Decimal128,
   _tatuajes: Boolean,
   _direccion: String,
-  _tipoSangre: String
+  _tipoSangre: String, 
+  _correo: String,
+  _contrasena:String
 });
 
 class Donante{
@@ -20,6 +22,8 @@ class Donante{
     this._tatuajes = tatuajes;
     this._direccion = direccion;
     this._tipoSangre = tipoSangre;
+    this._correo = correo;
+    this._contrasena = contrasena;
 
   }
 
@@ -77,6 +81,22 @@ class Donante{
 
   set tipoSangre(v){
     this._tipoSangre = v;
+  }
+
+  get correo(){
+    return this._correo;
+  }
+
+  set correo(v){
+    this._correo = v;
+  }
+
+  get contrasena(){
+    return this._contrasena;
+  }
+
+  set contrasena(v){
+    this._contrasena = v;
   }
 
 }

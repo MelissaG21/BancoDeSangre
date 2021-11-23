@@ -4,8 +4,7 @@ const mongoosePaginate = require('mongoose-paginate-v2');
 const schema = mongoose.Schema({
   _correo: String,
   _password: String,
-  _tipoUsuario: String,
-  _salt:String,
+  _salt:String
   /* _profiles: [{
     type: mongoose.Schema.ObjectId, ref: 'Profile'
   }] */

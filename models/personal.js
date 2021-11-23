@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema({
   _nombre: String,
   _apellido: String,
-  _nombreHospital: String
+  _nombreHospital: String,
+  _correo: String,
+  _contrasena:String
 });
 
 class Personal{
@@ -12,6 +14,8 @@ class Personal{
     this._nombre = nombre;
     this._apellido = apellido;
     this._nombreHospital = nombreHospital;
+    this._correo = correo;
+    this._password = password;
   }
 
   get nombre(){
@@ -36,6 +40,22 @@ class Personal{
 
   set nombreHospital(v){
     this._nombreHospital = v;
+  }
+
+  get correo(){
+    return this._correo;
+  }
+
+  set correo(v){
+    this._correo = v;
+  }
+
+  get password(){
+    return this._password;
+  }
+
+  set password(v){
+    this._password = v;
   }
 
 }

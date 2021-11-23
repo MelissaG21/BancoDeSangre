@@ -1,6 +1,7 @@
 const express =require('express');
 const path = require('path');
 const Personal = require('../models/personal');
+const User = require('../models/user');
 
 function pagina(req, res, next) {
   res.sendFile(path.resolve(__dirname,'../views/registroP.html'));
@@ -27,7 +28,6 @@ function create(req,res,next){
       apellido: apellido,
       nombreHospital: nombreHospital
     });
-
     personal.save().then(obj => res.status(200).json({
       message: 'Personal creado correctamente',
       obj: obj
@@ -35,6 +35,7 @@ function create(req,res,next){
       message: 'No se pudo almacenar el personal.',
       obj: ex
     }));
+
 }
 
 function replace(req,res,next){
