@@ -5,7 +5,7 @@ function pagina(req, res, next){
   res.sendFile(path.resolve(__dirname,'../views/citas.html'));
 }
 
-function list(req, res, next) {
+/* function list(req, res, next) {
     //email,name,lastName,password
     res.send('lista de citas');
 
@@ -16,7 +16,7 @@ function list(req, res, next) {
       message: 'No se pudo consultar la información de las citas',
       obj: ex
     }));
-}
+} */
 
 
 function index(req,res,next){
@@ -124,5 +124,5 @@ function destroy(req,res,next){
 }
 
 module.exports ={
-    pagina,list, index,create,edit,replace,destroy
+    pagina, index,create,edit,replace,destroy
 }

@@ -5,7 +5,7 @@ const controller = require('../controllers/citas');
 /* GET users listing. */
 router.get('/', controller.pagina);
 
-router.get('/', controller.list);
+//router.get('/', controller.list);
 
 router.get('/:id',controller.index);
 
