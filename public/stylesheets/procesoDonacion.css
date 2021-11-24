@@ -24,17 +24,40 @@ body {
   width: 200px;
 }
 
+#flechaRegreso{
+  height: 80px;
+  width: 160px;
+}
+
+html {
+	margin: 0;
+	font-family: 'Muli', sans-serif;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	margin: 0;
+	font-size: 1.15rem;
+	line-height: 1.4em;
+}
+
 #container {
 	background-color: #FFF;
-	margin: 10px 0%;
-	padding: 0px 60px;
+	margin: 80px 10%;
+	padding: 30px 60px;
 	border-radius: 20px;
 	box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
-
 }
 
-a {
-  color:black;
+main,header {
+	box-sizing: border-box;
 }
 
-class
+main {
+	background-color: #f7f7f7;
+	padding: 20px;
+	border-radius: 10px;
+	color: #3a3e40;
+	margin: 40px 0;
+}

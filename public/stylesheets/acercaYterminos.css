@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background: linear-gradient(-45deg, #b3dce8, #80d4ed, #41c1e8, #0382a8);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
@@ -17,6 +17,26 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+
+#logo{
+  height: 120px;
+  width: 200px;
+}
+
+#flechaRegreso{
+  height: 80px;
+  width: 160px;
+}
+
+#container {
+	background-color: #FFF;
+	margin: 10px 0%;
+	padding: 0px 60px;
+	border-radius: 20px;
+	box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+
 }
 
 .wrapper {
@@ -45,7 +65,7 @@ h1 {
 	padding: 10px;
 	font-size: 1.4em;
 	font-family: monospace;
-	color: #8F6ED5;
+	color: #383c3d;
 }
 
 
@@ -55,7 +75,7 @@ h1 {
 	height: 12px;
 	width: 24px;
 	margin-right: 10px;
-	background: #BEB0F4;
+	background: #383c3d;
 }
 
 
@@ -67,9 +87,9 @@ h1 {
 
 .faq-conteudo {
 	padding: 10px;
-	color: #6B7C93;
+	color: #413f45;
 	font-family: Helvetica;
-	font-size: .875em;
+	font-size: 1em;
 	line-height: 1.4em;
 	display: none;
 }
