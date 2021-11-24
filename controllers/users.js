@@ -93,6 +93,12 @@ function create(req,res,next){
         }));
       })
     })
+
+    /*if(tipoUsuario == "Donante"){
+      res.sendFile(path.resolve('/inicioDonante'));
+    }else{
+      res.sendFile(path.resolve('/inicioDonante'));
+    }*/
 }
 
 function replace(req,res,next){
