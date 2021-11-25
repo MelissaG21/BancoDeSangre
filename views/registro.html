@@ -12,17 +12,17 @@
         </header>
         <h3 style="text-align: center;">Registro donante</h3>
         <form action="/users" method = "post">
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Correo:&nbsp;<input type="email" name="correo"/></p>
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp;  Contraseña:&nbsp;<input type="password" name="password"/></p>
+            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Correo:&nbsp;<input type="email" name="correo" required/></p>
+            <p style="text-align: center;">&nbsp; &nbsp; &nbsp;  Contraseña:&nbsp;<input type="password" name="password" required/></p>
             <input name="tipoUsuario" type="hidden" type="text" value="Donante">
             <p style="text-align: center;" ><button name="button" type="submit">Crear usuario</button></p>
         </form>
         <form action="/donantes" method = "post">
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp;Nombre:&nbsp;<input type="text" name="nombre"/></p>
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; Apellido:&nbsp;<input type="text" name="apellido"/></p>
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Edad:&nbsp;<input type="text" name="edad"/>&nbsp;</p>
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; Peso(kg):&nbsp;<input type="text" name="peso"/></p>
-            <p style="text-align: center;">&nbsp;&nbsp;&nbsp;Direccion:&nbsp;&nbsp;<input type="text" name="direccion"/></p>
+            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp;Nombre:&nbsp;<input type="text" name="nombre" required/></p>
+            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; Apellido:&nbsp;<input type="text" name="apellido" required/></p>
+            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Edad:&nbsp;<input type="text" name="edad" required/>&nbsp;</p>
+            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; Peso(kg):&nbsp;<input type="text" name="peso" required/></p>
+            <p style="text-align: center;">&nbsp;&nbsp;&nbsp;Direccion:&nbsp;&nbsp;<input type="text" name="direccion" required/></p>
             <p style="text-align: center;">&iquest;Cuenta usted con algún tatuaje?&nbsp; &nbsp;&nbsp;
                 <select name="tatuajes" id="tatuaje">
                     <option value="true">Si</option>
