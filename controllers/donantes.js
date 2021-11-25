@@ -1,8 +1,7 @@
 const express = require('express');
-const path = require('path');
 //const { json } = require('express');
 const Donante = require('../models/donante')
-
+const path = require('path');
 
 
 function pagina(req, res, next){
@@ -41,14 +40,10 @@ function create(req, res, next){
         tipoSangre: tipoSangre
     });
 
-    donante.save().then(obj => res.status(200).json({
-        message: 'donante creado correctamente',
-        obj: obj
-    })).catch(ex => res.status(500).json({
-        message: 'No se pudo almacenar el donante',
-        obj:ex
+    donante.save().catch(ex => res.status(500).json({
+      message: 'No se pudo almacenar el donante.',
+      obj: ex
     }));
-
 }
 
 function replace(req, res, next){
