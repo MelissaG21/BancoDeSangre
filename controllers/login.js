@@ -23,16 +23,17 @@ function inicio(req, res, next){
 
     async.parallel({
         user: callback => User.findOne({_correo:correo})
-        .select('_password _salt')
+        .select('_password _salt _tipoUsuario')
         .exec(callback)
     },(err,result)=>{
         if(result.user){
             bcript.hash(password,result.user.salt, (err,hash)=>{
                 if(hash === result.user.password){
-                    res.status(200).json({
-                    "message":"Usuarios y/o contraseña okay.", 
-                    "obj":jwt.sign(result.user.id,jwtKey)
-                    });
+                    if(result.user.tipoUsuario == "Donante"){
+                        res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
+                    }else{
+                        res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+                    }
                 }else{
                     res.status(403).json({
                         "message":"Usuarios y/o contraseña incorrectos.", obj:null
