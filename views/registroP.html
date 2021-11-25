@@ -27,22 +27,23 @@
                   <tr style="border: hidden">
                     <td style="border: hidden">
                       <center>
-                        <form class="log-in" action="/donantes" method = "post" id="formu">
+                        <form class="log-in" action="/personal" method = "post" id="formu">
                           <p>Nombre:&nbsp;<input class="input" type="text" name="nombre" required  />
                           <p>Apellido:&nbsp;<input class="input"  type="text" name="apellido" required />
                           </select></p>
-                            <p style="text-align: center;">Hospital:&nbsp; &nbsp;&nbsp;
-                              <select name="nombreHospital" id="hospital">
+                            <p>Hospital:&nbsp; &nbsp;&nbsp;
+                              <select id="solo" class="input" name="nombreHospital" id="hospital">
                                   <option value="General">Hospital General "Dr Salvador Zubirán"</option>
                                   <option value="StarMedica">Star Médica Chihuahua</option>
                                   <option value="Central">Hospital Central Universitario</option>
                                   <option value="Angeles">Hospital Angeles Chihuahua</option>
                                   <option value="infantil">Hospital Infantil de Especialidades de Chihuahua</option>
                           </select></p>
+                              <p>&nbsp;</p>
 
 
                                   <label class="checkbox" id="solo">
-                                    <input type="checkbox" required="">Acepto <a href="/terminos" target="_blank">Términos y condiciones</a>.
+                                    <input id="solo" type="checkbox" required="">Acepto <a href="/terminos" target="_blank">Términos y condiciones</a>.
                                   </label>
                                   <p>&nbsp;</p>
 
