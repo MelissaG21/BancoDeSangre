@@ -21,7 +21,15 @@
         <form action="/personal" method = "post">
             <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp;Nombre:&nbsp;<input type="text" name="nombre"/></p>
             <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; Apellido:&nbsp;<input type="text" name="apellido" /></p>
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp;Hospital:&nbsp;<input type="text" name="nombreHospital"/></p>
+            </select></p>
+            <p style="text-align: center;">&iquest;Hospital al que quierar donar:&nbsp; &nbsp;&nbsp;
+                <select name="nombreHospital" id="hospital">
+                    <option value="General">Hospital General "Dr Salvador Zubirán"</option>
+                    <option value="StarMedica">Star Médica Chihuahua</option>
+                    <option value="Central">Hospital Central Universitario</option>
+                    <option value="Angeles">Hospital Angeles Chihuahua</option>
+                    <option value="infantil">Hospital Infantil de Especialidades de Chihuahua</option>
+                </select></p> 
             <p style="text-align: center;"><button type="submit"name="button">Crear cuenta</button></p>
         </form>
     </body>
