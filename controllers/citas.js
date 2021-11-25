@@ -3,22 +3,8 @@ const Cita = require('../models/cita');
 const path = require('path');
 
 function pagina(req, res, next){
-  res.sendFile(path.resolve(__dirname,'../views/citas.html'));
+  res.sendFile(path.resolve(__dirname,'../views/agendarC.html'));
 }
-
-/* function list(req, res, next) {
-    //email,name,lastName,password
-    res.send('lista de citas');
-
-    Cita.find().then(objs => res.status(200).json({
-      message: 'Lista de citas del sistema',
-      obj:objs
-    })).catch(ex => res.status(500).json({
-      message: 'No se pudo consultar la información de las citas',
-      obj: ex
-    }));
-} */
-
 
 function index(req,res,next){
   const id = req.params.id;
@@ -44,7 +30,7 @@ function create(req,res,next){
       nombreHospital: nombreHospital
     });
 
-    actor.save().then(obj => res.status(200).json({
+    cita.save().then(obj => res.status(200).json({
       message: 'Cita creada correctamente',
       obj: obj
     })).catch(ex => res.status(500).json({
