@@ -95,11 +95,11 @@ function create(req,res,next){
       })
     })
 
-    if(tipoUsuario == "Donante"){
-      res.sendFile(path.resolve('/inicioDonante'));
+    /*if(tipoUsuario == "Donante"){
+      res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
     }else{
-      res.sendFile(path.resolve('/inicioDonante'));
-    }
+      res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+    }*/
 }
 
 function replace(req,res,next){
