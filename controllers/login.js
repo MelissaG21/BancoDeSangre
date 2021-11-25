@@ -17,12 +17,12 @@ function home(req, res, next){
 
 
 function inicio(req, res, next){
-    let email = req.body.email;
+    let correo = req.body.correo;
     let password = req.body.password; 
     //res.sendFile(path.resolve(__dirname,'../views/hola.html'));
 
     async.parallel({
-        user: callback => User.findOne({_email:email})
+        user: callback => User.findOne({_correo:correo})
         .select('_password _salt')
         .exec(callback)
     },(err,result)=>{
