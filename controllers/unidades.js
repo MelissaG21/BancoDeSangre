@@ -6,7 +6,7 @@ const path = require('path');
 //Modelo = Una estructura de datos que representa una entidad real
 
 function pagina(req, res, next) {
-  res.sendFile(path.resolve(__dirname,'../views/unidades.html'));
+  res.sendFile(path.resolve(__dirname,'../views/registroU.html'));
 }
 
 function index(req, res, next){

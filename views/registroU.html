@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario de unidades</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-    <form action="/users" method="post"></form><form action="/personal" method="post">
+    <div id="container">
+        <a href="/"><img id="logo" src="/images/Logo.jpg"></a>
+    </div>
+
+      <div>
+        <center>
+          <table style="border: hidden" width="1500">
+            <tbody style="border: hidden">
+              <center>
+                <h1>Bienvenido a Heroe de Sangre</h1>
+              </center>
+    <form action="/unidades" method="post">
         <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Hospital:&nbsp;<select id="hospital" name="nombreHospital">
             <option value="General">Hospital General "Dr Salvador Zubir&aacute;n"</option>
             <option value="StarMedica">Star M&eacute;dica Chihuahua</option>
             <option value="Central">Hospital Central Universitario</option>
             <option value="Angeles">Hospital Angeles Chihuahua</option>
             <option value="infantil">Hospital Infantil de Especialidades de Chihuahua</option>
-            <option value="infantil"></option>
-            <option value="infantil"></option>
-            <option value="infantil"></option>
         </select></p>
         <p style="text-align: center;">Tipo de sangre:&nbsp;<select id="sangre" name="tipoSangre">
             <option value="A+">A+</option>
@@ -28,8 +37,15 @@
             <option value="O+">O+</option>
             <option value="O-">O-</option>
         </select>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
-        <p style="text-align: center;">Cantidad: <input name="direccion" type="number" /></p>
+        <p style="text-align: center;">Cantidad: <input name="direccion" type="number" name="cantidad"/></p>
         <p style="text-align: center;"><button name="button" type="submit">Crear cuenta</button></p>
         </form>
+        <footer>
+            <p style="text-align: center;">
+                <a href="/acerca">Acerca de nosotros</a>&nbsp; &nbsp;&nbsp;
+                <a href="/terminos">Terminos de privacidad y condiciones</a>&nbsp; &nbsp;&nbsp;
+                <a href="/proceso">Proceso de donación</a>&nbsp; &nbsp;&nbsp;
+            </p>
+        </footer>
 </body>
 </html>
