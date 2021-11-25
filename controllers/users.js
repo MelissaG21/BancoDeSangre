@@ -89,8 +89,8 @@ function create(req,res,next){
           message: 'No se pudo almacenar el usuario.',
           obj: ex
         }));
-
-        if(user._tipoUsuario == 'Personal'){
+        const h = tipoUsuario.toString();
+        if(h == "Donante"){
           res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
         }else{
           res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
