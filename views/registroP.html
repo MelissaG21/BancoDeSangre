@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=, initial-scale=1.0">
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="/stylesheets/registroPersonal.css">
+      <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title>Registro de personal</title>
 
     </head>
@@ -13,8 +13,8 @@
         </header>
         <h3 style="text-align: center;"><br />Registro Personal</h3>
         <form action="/users" method = "post">
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Correo:&nbsp;<input type="email" name="correo" required disabled id="c"/></p>
-            <p style="text-align: center;">&nbsp; Contraseña:&nbsp;<input type="password" name="password" required disabled id="p"/></p>
+            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Correo:&nbsp;<input type="email" name="correo" required  id="c"/></p>
+            <p style="text-align: center;">&nbsp; Contraseña:&nbsp;<input type="password" name="password" required  id="p"/></p>
             <input name="tipoUsuario" type="hidden" type="text" value="Personal">
             <p style="text-align: center;"><button type="submit"name="button">Crear usuario</button></p>
         </form>
@@ -34,7 +34,7 @@
                   <label class="checkbox">
                     <input type="checkbox" required="">Acepto terminos y condiciones
                   </label>
-              </center>
+                </center>
             <p style="text-align: center;"><button onclick="c.disabled = false;p.disabled = false;" type="submit"name="button">Registrar  datos</button></p>
         </form>
     </body>

@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background: linear-gradient(-45deg, #b3dce8, #80d4ed, #41c1e8, #0382a8);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+h1{
+  padding: 30;
+  position:relative;
+  text-align: center;
+}
+
+#logo{
+  height: 120px;
+  width: 200px;
+  float: left;
+  position: absolute;
+}
+
+#flechaRegreso{
+  height: 80px;
+  width: 160px;
+}
+
+#container {
+	background-color: #FFF;
+	margin: 10px 0%;
+	padding: 0px 60px;
+	border-radius: 20px;
+	box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+  height: 120px;
+}
+
+#container2 {
+	padding: 60;
+
+}

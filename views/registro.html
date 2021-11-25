@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=, initial-scale=1.0">
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="/stylesheets/registroDonante.css">
+      <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title>Registro de donante</title>
     </head>
     <body>
         <header>
-            <h1>Heroe de sangre</h1>
+
         </header>
+
+        <div id="container">
+            <a href="/" id="logo"><img id="logo" src="/images/Logo.jpg"></a>
+
+
+        </div>
         <h3 style="text-align: center;">Registro donante</h3>
+
+        <div id="container2">
+              <!--en action iría la página de la sesión ya iniciada--->
+              <form class="log-in" action="/users" method = "post">
+                <h2 class="title">Registro Donante</h2>
+                <input class="input" type="email" name="correo" id="c" required autofocus placeholder="Usuario" />
+                <input class="input" type="password" name="password" placeholder="Contraseña" />
+                <button class="input submit" type="submit" value="Iniciar sesion">Iniciar sesion</button>
+
+              </form>
+
+        </div>
+
         <form action="/users" method = "post">
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Correo:&nbsp;<input type="email" name="correo" id="c" required disabled/></p>
+            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Correo:&nbsp;<input type="email"  /></p>
             <p style="text-align: center;">&nbsp; &nbsp; &nbsp;  Contraseña:&nbsp;<input type="password" name="password" id="p" required disabled/></p>
             <input name="tipoUsuario" type="hidden" type="text" value="Donante">
             <p style="text-align: center;" ><button name="BU" type="submit">Crear usuario</button></p>
@@ -39,15 +58,16 @@
                         <option value="O+">O+</option>
                         <option value="O-">O-</option>
                     </select></p>
+                    <center>
+                      <label class="checkbox">
+                        <input type="checkbox" required="">Acepto terminos y condiciones
+                      </label>
+                    </center>
             <p style="text-align: center;" ><button name="BD" type="submit" onclick="c.disabled = false;p.disabled = false;">Registrar datos</button></p>
         </form>
-        <footer>
-            <p style="text-align: center;">
-                <a href="/acerca">Acerca de nosotros</a>&nbsp; &nbsp;&nbsp;
-                <a href="/privacidad">Términos de privacidad</a> &nbsp; &nbsp;&nbsp;
-                <a href="/terminos">Términos y condiciones&oacute;n</a>&nbsp; &nbsp;&nbsp; 
-                <a href="/proceso">Proceso de donación</a>&nbsp; &nbsp;&nbsp;
-            </p>
-        </footer>
+
+
+        <a href="/"><img id="flechaRegreso" src="/images/flechaRegreso.png"></a>
+
     </body>
 </html>
