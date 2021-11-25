@@ -12,12 +12,12 @@
         </header>
         <h3 style="text-align: center;">Registro donante</h3>
         <form action="/users" method = "post">
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Correo:&nbsp;<input type="email" name="correo" required/></p>
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp;  Contraseña:&nbsp;<input type="password" name="password" required/></p>
+            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Correo:&nbsp;<input type="email" name="correo" id="c" required disabled/></p>
+            <p style="text-align: center;">&nbsp; &nbsp; &nbsp;  Contraseña:&nbsp;<input type="password" name="password" id="p" required disabled/></p>
             <input name="tipoUsuario" type="hidden" type="text" value="Donante">
-            <p style="text-align: center;" ><button name="button" type="submit">Crear usuario</button></p>
+            <p style="text-align: center;" ><button name="BU" type="submit">Crear usuario</button></p>
         </form>
-        <form action="/donantes" method = "post">
+        <form action="/donantes" method = "post" id="formu">
             <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp;Nombre:&nbsp;<input type="text" name="nombre" required/></p>
             <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; Apellido:&nbsp;<input type="text" name="apellido" required/></p>
             <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Edad:&nbsp;<input type="text" name="edad" required/>&nbsp;</p>
@@ -39,7 +39,7 @@
                         <option value="O+">O+</option>
                         <option value="O-">O-</option>
                     </select></p>
-            <p style="text-align: center;" ><button name="button" type="submit">Crear cuenta</button></p>
+            <p style="text-align: center;" ><button name="BD" type="submit" onclick="c.disabled = false;p.disabled = false;">Registrar datos</button></p>
         </form>
         <footer>
             <p style="text-align: center;">
