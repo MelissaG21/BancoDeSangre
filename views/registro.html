@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
     <head>
       <meta charset="utf-8">
@@ -12,26 +12,81 @@
         </header>
 
         <div id="container">
-            <a href="/" id="logo"><img id="logo" src="/images/Logo.jpg"></a>
-
+          <a href="/" id="logo"><img id="logo" src="/images/Logo.jpg"></a>
+          <h1>Registro donante</h1>
 
         </div>
-        <h3 style="text-align: center;">Registro donante</h3>
+
 
         <div id="container2">
               <!--en action iría la página de la sesión ya iniciada--->
-              <form class="log-in" action="/users" method = "post">
-                <h2 class="title">Registro Donante</h2>
-                <input class="input" type="email" name="correo" id="c" required autofocus placeholder="Usuario" />
-                <input class="input" type="password" name="password" placeholder="Contraseña" />
-                <button class="input submit" type="submit" value="Iniciar sesion">Iniciar sesion</button>
+            <center>
+              <table style="border: hidden" width="1000">
+                <tbody style="border: hidden">
 
-              </form>
+                  <tr style="border: hidden">
+                    <td style="border: hidden">
+                      <center>
+                        <form class="log-in" action="/donantes" method = "post" id="formu">
+                          <p>Nombre:&nbsp;<input class="input" type="text" name="nombre" required  />
+                          <p>Apellido:&nbsp;<input class="input"  type="text" name="apellido" required />
+                          <p>Edad:&nbsp;<input class="input" type="email" name="correo"  required  />
+                          <p>Peso(kg):&nbsp;<input class="input" type="text" name="edad" required />
+                          <p>Direccion:&nbsp;<input class="input" type="text" name="direccion" required/>
+                            <p id="solo">&iquest;Cuenta usted con algún tatuaje?
+                                <select name="tatuajes" id="tatuaje">
+                                    <option value="true">Si</option>
+                                    <option value="false" selected="selected">No</option>
+                                </select></p>
+
+                            <p id="solo">&iquest;Tipo de sangre:&nbsp; &nbsp;&nbsp;
+                                <select name="tipoSangre" id="sangre">
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select></p>
+
+                                  <label class="checkbox" id="solo">
+                                    <input type="checkbox" required="">Acepto <a href="/terminos" target="_blank">Términos y condiciones</a>.
+                                  </label>
+                                  <p>&nbsp;</p>
+
+                            <p ><button class="input submit" name="BD" type="submit" onclick="c.disabled = false;p.disabled = false;">Registrar datos</button></p>
+                        </form>
+                      </center>
+                    </td>
+
+                    <td style="border: hidden">
+                      <center>
+                        <form class="log-in" action="/users" method = "post">
+                          <p>Correo:&nbsp;<input class="input" type="email" name="correo" id="c" required disabled/>
+                          <p>Contraseña:&nbsp;<input class="input" type="password" name="password" id="p" required disabled/>
+                          <p>&nbsp;</p>
+                          <input name="tipoUsuario" type="hidden" type="text" value="Donante">
+                          <button class="input submit" type="submit" name="BU" value="Crear Usuario">Crear Usuario</button>
+                        </form>
+
+
+                      </center>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </center>
+
+
 
         </div>
 
-        <form action="/users" method = "post">
-            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Correo:&nbsp;<input type="email"  /></p>
+
+        <!--<form action="/users" method = "post">
+            <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Correo:&nbsp;<input type="email" name="correo" id="c" required disabled/></p>
             <p style="text-align: center;">&nbsp; &nbsp; &nbsp;  Contraseña:&nbsp;<input type="password" name="password" id="p" required disabled/></p>
             <input name="tipoUsuario" type="hidden" type="text" value="Donante">
             <p style="text-align: center;" ><button name="BU" type="submit">Crear usuario</button></p>
@@ -64,10 +119,10 @@
                       </label>
                     </center>
             <p style="text-align: center;" ><button name="BD" type="submit" onclick="c.disabled = false;p.disabled = false;">Registrar datos</button></p>
-        </form>
+        </form>-->
 
 
-        <a href="/"><img id="flechaRegreso" src="/images/flechaRegreso.png"></a>
+        <a href="/seleccion"><img id="flechaRegreso" src="/images/flechaRegreso.png"></a>
 
     </body>
 </html>

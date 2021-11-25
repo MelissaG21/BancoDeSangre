@@ -25,6 +25,10 @@ body {
 	}
 }
 
+#solo{
+  padding: 5;
+}
+
 h1{
   padding: 30;
   position:relative;
@@ -53,6 +57,67 @@ h1{
 }
 
 #container2 {
-	padding: 60;
+	padding: 20;
+}
+
+.log-in {
+  position: relative;
+  width: 18rem;
+  top: calc(50% - 9.25rem);
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 300;
+  color: black;
+}
+
+.input {
+  box-sizing: border-box;
+  display: block;
+  padding: 0 1rem;
+  width: 100%; height: 3rem;
+  appearance: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #556;
+  text-align: center;
+  border: 0;
+  border-radius: 1.5rem;
+  background: #fff;
+}
+
+.input:disabled{
+  background: #9fa6a6;
+
+}
+
+.submit {
+  margin-bottom: .6rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: black;
+  background: #9cdaf0;
+  transition: 200ms;
+  box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+}
+
+.submit:hover {
+  background: #10C0FF;
+}
+
+.left{
+
+}
+
+.rigth{
 
 }
