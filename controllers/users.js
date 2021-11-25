@@ -7,6 +7,7 @@ const userAblility = require('../models/userAbility');
 const Profile = require('../models/profile');
 const Permission = require('../models/permission');
 const path = require('path');
+const { BADNAME } = require('dns');
 
 /* var map = {}
 map['admin'] = adminAbility;
@@ -84,16 +85,18 @@ function create(req,res,next){
           profiles:profiles,
           salt:result.salt
         });
-    
-        user.save().catch(ex => res.status(500).json({
+        let band = false;
+        user.save().then(band=true).catch(ex => res.status(500).json({
           message: 'No se pudo almacenar el usuario.',
           obj: ex
         }));
         const h = tipoUsuario.toString();
-        if(h == "Donante"){
-          res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
-        }else{
-          res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+        if(band){
+          if(h == "Donante"){
+            res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
+          }else{
+            res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+          }
         }
       })
     })
