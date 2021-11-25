@@ -29,10 +29,9 @@ function inicio(req, res, next){
         if(result.user){
             bcript.hash(password,result.user.salt, (err,hash)=>{
                 if(hash === result.user.password){
-                    res.status(200).json({
-                    "message":"Usuarios y/o contraseña okay.", 
-                    "obj":jwt.sign(result.user.id,jwtKey)
-                    });
+                    res.sendFile(path.resolve(__dirname,'../views/login.html')),
+                    //"obj":jwt.sign(result.user.id,jwtKey)
+                    }
                 }else{
                     res.status(403).json({
                         "message":"Usuarios y/o contraseña incorrectos.", obj:null
