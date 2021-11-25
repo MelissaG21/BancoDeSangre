@@ -62,11 +62,12 @@ body {
   margin-bottom: .6rem;
   font-weight: 500;
   cursor: pointer;
-  color: #fff;
-  background: #00B0FF;
+  color: black;
+  background: #9cdaf0;
   transition: 200ms;
   box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
 }
+
 .submit:hover {
   background: #10C0FF;
 }
@@ -83,6 +84,11 @@ h1{
   width: 200px;
   float: left;
   position: absolute;
+}
+
+#flechaRegreso{
+  height: 80px;
+  width: 160px;
 }
 
 #container {
