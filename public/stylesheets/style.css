@@ -34,7 +34,8 @@ footer{
 }
 
 h1{
-
+  padding: 30;
+  position:relative;
   text-align: center;
 }
 
@@ -42,6 +43,7 @@ h1{
   height: 120px;
   width: 200px;
   float: left;
+  position: absolute;
 }
 
 #container {
