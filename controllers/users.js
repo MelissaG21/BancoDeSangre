@@ -6,6 +6,7 @@ const adminAbility = require('../models/adminAbility')
 const userAblility = require('../models/userAbility');
 const Profile = require('../models/profile');
 const Permission = require('../models/permission');
+const path = require('path');
 
 /* var map = {}
 map['admin'] = adminAbility;
@@ -94,11 +95,11 @@ function create(req,res,next){
       })
     })
 
-    /*if(tipoUsuario == "Donante"){
+    if(tipoUsuario == "Donante"){
       res.sendFile(path.resolve('/inicioDonante'));
     }else{
       res.sendFile(path.resolve('/inicioDonante'));
-    }*/
+    }
 }
 
 function replace(req,res,next){

@@ -1,16 +1,12 @@
 const express = require('express');
 const Unidad = require('../models/unidad');
+const path = require('path');
 
 //RESFULL = GET, POST, PUT, PACH Y DELETE
 //Modelo = Una estructura de datos que representa una entidad real
-function list(req, res, next){
-  Unidad.find().then(objs => res.status(200).json({
-    message: 'Lista de las unidades del sistema',
-    obj:objs
-  })).catch(ex => res.status(500).json({
-    message: 'No se pudo consultar la información de las unidades',
-    obj: ex
-  }));
+
+function pagina(req, res, next) {
+  res.sendFile(path.resolve(__dirname,'../views/unidades.html'));
 }
 
 function index(req, res, next){
@@ -106,5 +102,5 @@ function destroy(req, res, next){
 }
 
 module.exports = {
-    list, index, create, replace, edit, destroy
+    pagina, index, create, replace, edit, destroy
 }

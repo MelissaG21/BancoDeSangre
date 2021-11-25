@@ -1,5 +1,6 @@
 const express = require('express');
 const Hospital = require('../models/hospital');
+const path = require('path');
 
 //RESFULL = GET, POST, PUT, PACH Y DELETE
 //Modelo = Una estructura de datos que representa una entidad real

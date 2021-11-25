@@ -4,6 +4,7 @@ const path = require('path');
 const Donante = require('../models/donante')
 
 
+
 function pagina(req, res, next){
   res.sendFile(path.resolve(__dirname,'../views/registro.html'));
 }

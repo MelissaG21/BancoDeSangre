@@ -4,7 +4,7 @@ const router = express.Router();
 const controller= require('../controllers/unidades');
 
 /* GET users listing.  /users/ */
-router.get('/', controller.list);
+router.get('/', controller.pagina);
 
 router.get('/:id', controller.index);
 
