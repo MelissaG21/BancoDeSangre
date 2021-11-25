@@ -25,18 +25,14 @@ body {
 	}
 }
 
-footer{
-  padding: 20px;
+#solo{
+  padding: 5;
 }
 
 h1{
   padding: 30;
   position:relative;
   text-align: center;
-}
-
-h2{
-  padding: 30;
 }
 
 #logo{
@@ -61,18 +57,17 @@ h2{
 }
 
 #container2 {
-  background-color: #FFF;
-	margin: 10px 0%;
-	padding: 20px 60px;
-	border-radius: 20px;
-  box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
-
+	padding: 20;
 }
 
-.imagen{
-  width: 100%;
-  max-width: 500;
-  height: auto;
+.log-in {
+  position: relative;
+  width: 18rem;
+  top: calc(50% - 9.25rem);
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-align: center;
 }
 
 .title {
@@ -84,6 +79,41 @@ h2{
   color: black;
 }
 
-a {
-  color:black;
+.input {
+  box-sizing: border-box;
+  display: block;
+  padding: 0 1rem;
+  width: 100%; height: 3rem;
+  appearance: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #556;
+  text-align: center;
+  border: 0;
+  border-radius: 1.5rem;
+  background: #fff;
+}
+
+.input:disabled{
+  background: #9fa6a6;
+
+}
+
+.submit {
+  margin-bottom: .6rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: black;
+  background: #9cdaf0;
+  transition: 200ms;
+  box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+}
+
+.submit:hover {
+  background: #10C0FF;
+}
+
+p{
+  font-size: 16px
 }

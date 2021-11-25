@@ -1,35 +1,45 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <title></title>
+    <link rel="stylesheet" href="/stylesheets/inicioDonante.css">
+    <title>Bienvenido donante</title>
   </head>
   <body>
     <div id="container">
         <a href="/"><img id="logo" src="/images/Logo.jpg"></a>
+        <h1>Bienvenido Heroe Donante</h1>
     </div>
+
 
       <div>
         <center>
-          <table style="border: hidden" width="1500">
-            <tbody style="border: hidden">
-              <center>
-                <h1>Bienvenido a Heroe de Sangre</h1>
-                <h2>¿Quieres agendar tu cita?</h2>
-                <a href="/citas">
-                  <img src="/images/donar.jpg"  width="600" height="400">
-                </a>
-                
-              </center>
+          <div id="container2">
+            <table style="border: hidden" width="1000">
+              <tbody style="border: hidden">
 
-              <button onclick="window.location.href='/citas'"type="button" name="citas">Agendar cita</button>
+                <tr style="border: hidden">
+                  <td style="border: hidden">
+                    <center>
+                      <img src="/images/agendarCita.jpg"  width="400" height="400">
+                    </center>
+                  </td>
 
-          <footer>
-            <p style="text-align: center;">
-                <a href="/acerca">Acerca de nosotros</a>&nbsp; &nbsp;&nbsp;
-                <a href="/terminos">Terminos de privacidad y condiciones</a>&nbsp; &nbsp;&nbsp;
-                <a href="/proceso">Proceso de donación</a>&nbsp; &nbsp;&nbsp;
-            </p>
+                  <td style="border: hidden">
+                    <center>
+                      <h2 class="title">¿Quieres agendar tu cita?</h2>
+                      <button onclick="window.location.href='/citas'"type="button" name="Registrarse" class="input submit">Agendar Cita</button>
+                    </center>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </center>
+
+
+          <footer align="left">
+              <a href="/login"><img id="flechaRegreso" src="/images/flechaRegreso.png"></a>
         </footer>
       </div>
   </body>
