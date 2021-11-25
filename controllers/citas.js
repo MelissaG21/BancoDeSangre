@@ -3,7 +3,7 @@ const Cita = require('../models/cita');
 const path = require('path');
 
 function pagina(req, res, next){
-  res.sendFile(path.resolve(__dirname,'../views/citas.html'));
+  res.sendFile(path.resolve(__dirname,'../views/agendaCita.html'));
 }
 
 /* function list(req, res, next) {
