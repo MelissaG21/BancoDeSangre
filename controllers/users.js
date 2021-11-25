@@ -85,21 +85,18 @@ function create(req,res,next){
           salt:result.salt
         });
     
-        user.save().then(obj => res.status(200).json({
-          message: 'Usuario creado correctamente',
-          obj: obj
-        })).catch(ex => res.status(500).json({
+        user.save().catch(ex => res.status(500).json({
           message: 'No se pudo almacenar el usuario.',
           obj: ex
         }));
+
+        if(user._tipoUsuario == 'Personal'){
+          res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
+        }else{
+          res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+        }
       })
     })
-
-    /*if(tipoUsuario == "Donante"){
-      res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
-    }else{
-      res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
-    }*/
 }
 
 function replace(req,res,next){
