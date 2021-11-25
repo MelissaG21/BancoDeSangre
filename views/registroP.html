@@ -1,17 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <link rel="stylesheet" href="/stylesheets/registroPersonal.css">
-      <meta name="viewport" content="width=device-width", initial-scale="1.0">
-        <title>Registro de personal</title>
 
-    </head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/registroPersonal.css">
+  <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Registro de personal</title>
+</head>
     <body>
         <header>
-            <h1>Heroe de sangre</h1>
+
         </header>
-        <h3 style="text-align: center;"><br />Registro Personal</h3>
+
+        <div id="container">
+          <a href="/" id="logo"><img id="logo" src="/images/Logo.jpg"></a>
+          <h1>Registro personal</h1>
+
+        </div>
+
+
+        <div id="container2">
+              <!--en action iría la página de la sesión ya iniciada--->
+            <center>
+              <table style="border: hidden" width="1000">
+                <tbody style="border: hidden">
+
+                  <tr style="border: hidden">
+                    <td style="border: hidden">
+                      <center>
+                        <form class="log-in" action="/donantes" method = "post" id="formu">
+                          <p>Nombre:&nbsp;<input class="input" type="text" name="nombre" required  />
+                          <p>Apellido:&nbsp;<input class="input"  type="text" name="apellido" required />
+                          </select></p>
+                            <p style="text-align: center;">Hospital:&nbsp; &nbsp;&nbsp;
+                              <select name="nombreHospital" id="hospital">
+                                  <option value="General">Hospital General "Dr Salvador Zubirán"</option>
+                                  <option value="StarMedica">Star Médica Chihuahua</option>
+                                  <option value="Central">Hospital Central Universitario</option>
+                                  <option value="Angeles">Hospital Angeles Chihuahua</option>
+                                  <option value="infantil">Hospital Infantil de Especialidades de Chihuahua</option>
+                          </select></p>
+
+
+                                  <label class="checkbox" id="solo">
+                                    <input type="checkbox" required="">Acepto <a href="/terminos" target="_blank">Términos y condiciones</a>.
+                                  </label>
+                                  <p>&nbsp;</p>
+
+                            <p ><button class="input submit" name="BD" type="submit" onclick="c.disabled = false;p.disabled = false;">Registrar datos</button></p>
+                        </form>
+                      </center>
+                    </td>
+
+                    <td style="border: hidden">
+                      <center>
+                        <form class="log-in" action="/users" method = "post">
+                          <p>Correo:&nbsp;<input class="input" type="email" name="correo" id="c" required disabled/>
+                          <p>Contraseña:&nbsp;<input class="input" type="password" name="password" id="p" required disabled/>
+                          <p>&nbsp;</p>
+                          <input name="tipoUsuario" type="hidden" type="text" value="Personal">
+                          <button class="input submit" type="submit" name="BU" value="Crear Usuario">Crear Usuario</button>
+                        </form>
+
+
+                      </center>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </center>
+
+
+
+        </div>
+
+        <!--<h3 style="text-align: center;"><br />Registro Personal</h3>
         <form action="/users" method = "post">
             <p style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Correo:&nbsp;<input type="email" name="correo" required disabled id="c"/></p>
             <p style="text-align: center;">&nbsp; Contraseña:&nbsp;<input type="password" name="password" required disabled id="p"/></p>
@@ -36,14 +99,9 @@
                   </label>
                 </center>
             <p style="text-align: center;"><button onclick="c.disabled = false;p.disabled = false;" type="submit"name="button">Registrar  datos</button></p>
-        </form>
+        </form>-->
+
+        <a href="/seleccion"><img id="flechaRegreso" src="/images/flechaRegreso.png"></a>
     </body>
-    <footer>
-        <p style="text-align: center;">
-            <a href="/acerca">Acerca de nosotros</a>&nbsp; &nbsp;&nbsp;
-            <a href="/privacidad">Términos de privacidad</a> &nbsp; &nbsp;&nbsp;
-            <a href="/terminos">Términos y condiciones&oacute;n</a>&nbsp; &nbsp;&nbsp;
-            <a href="/proceso">Proceso de donación</a>&nbsp; &nbsp;&nbsp;
-        </p>
-    </footer>
+
 </html>
