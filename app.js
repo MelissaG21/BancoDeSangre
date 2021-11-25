@@ -24,6 +24,7 @@ const terminosRouter = require('./routes/terminos');
 const loginRouter = require('./routes/login');
 const acercaRouter = require('./routes/acerca');
 const iDRouter = require('./routes/iDonante');
+const iPRouter = require('./routes/iPersonal');
 
 const app = express();
 
@@ -73,6 +74,7 @@ app.use('/seleccion', seleccionRouter);
 app.use('/login', loginRouter); 
 app.use('/acerca', acercaRouter);
 app.use('/inicioDonante', iDRouter);
+app.use('/inicioPersonal', iPRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
