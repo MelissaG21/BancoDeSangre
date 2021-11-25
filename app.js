@@ -29,6 +29,7 @@ const app = express();
 
 const jwtKey = "aad574a1222540c655376f7985f8497d";
 
+//const uri = "mongodb+srv://hola:1234@cluster0.z1tvr.mongodb.net/BancoDeSangre?retryWrites=true&w=majority";
 const uri = "mongodb://localhost:27017/BancoDeSangre";
 mongoose.connect(uri);
 

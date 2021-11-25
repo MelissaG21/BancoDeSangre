@@ -22,7 +22,7 @@ function inicio(req, res, next){
     //res.sendFile(path.resolve(__dirname,'../views/hola.html'));
 
     async.parallel({
-        user: callback => User.findOne({"_email":email})
+        user: callback => User.findOne({_email:email})
         .select('_password _salt')
         .exec(callback)
     },(err,result)=>{
