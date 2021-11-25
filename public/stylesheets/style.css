@@ -25,6 +25,10 @@ body {
 	}
 }
 
+.pieFoto{
+  padding: 30;
+}
+
 footer{
   padding: 20px;
 }
@@ -53,7 +57,7 @@ h1{
 	margin: 10px 0%;
 	padding: 0px 60px;
 	border-radius: 20px;
-  box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+
 }
 
 .imagen{
