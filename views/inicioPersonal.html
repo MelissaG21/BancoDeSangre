@@ -1,7 +1,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/inicioPersonal.css">
     <title></title>
   </head>
   <body>
@@ -9,24 +9,35 @@
         <a href="/"><img id="logo" src="/images/Logo.jpg"></a>
     </div>
 
-      <div>
-        <center>
-          <table style="border: hidden" width="1500">
-            <tbody style="border: hidden">
-              <center>
-                <h1>Bienvenido a Heroe de Sangre</h1>
-              </center>
-            </tbody>
-          </table>
-          <button onclick="window.location.href='/unidades'"type="button" name="unidades">Registrar unidades</button>
+    <center>
+      <div id="container2">
+        <table style="border: hidden" width="1000">
+          <tbody style="border: hidden">
 
-          <footer>
-            <p style="text-align: center;">
-                <a href="/acerca">Acerca de nosotros</a>&nbsp; &nbsp;&nbsp;
-                <a href="/terminos">Terminos de privacidad y condiciones</a>&nbsp; &nbsp;&nbsp;
-                <a href="/proceso">Proceso de donación</a>&nbsp; &nbsp;&nbsp;
-            </p>
-        </footer>
+            <tr style="border: hidden">
+              <td style="border: hidden">
+                <center>
+                  <img src="/images/unidadesSangre.jpg"  width="500" height="380">
+                </center>
+              </td>
+
+              <td style="border: hidden">
+                <center>
+                  <h2 class="title">¿Necesitas unidades?</h2>
+                  <button onclick="window.location.href='/unidades'"type="button" name="unidades" class="input submit">Registrar unidades</button>
+                </center>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
       </div>
+    </center>
+
+
+      <footer align="left">
+          <a href="/login"><img id="flechaRegreso" src="/images/flechaRegreso.png"></a>
+    </footer>
+
   </body>
 </html>
