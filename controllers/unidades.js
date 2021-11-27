@@ -31,13 +31,14 @@ function create(req, res, next){
       cantidad: cantidad
     });
 
-    unidad.save().then(obj => res.status(200).json({
-      message: 'Unidad creada correctamente',
-      obj: obj
-    })).catch(ex => res.status(500).json({
+    let band = false;
+    unidad.save().then(band=true).catch(ex => res.status(500).json({
       message: 'No se pudo almacenar la unidad.',
       obj: ex
     }));
+    if(band){
+      res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+    }
 }
 
 function replace(req, res, next){
