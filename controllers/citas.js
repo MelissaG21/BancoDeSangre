@@ -30,14 +30,14 @@ function create(req,res,next){
       nombreHospital: nombreHospital
     });
 
-    cita.save().then(obj => res.status(200).json({
-      message: 'Cita creada correctamente',
-      obj: obj
-    })).catch(ex => res.status(500).json({
+    let band = false;
+    cita.save().then(band=true).catch(ex => res.status(500).json({
       message: 'No se pudo almacenar la cita.',
       obj: ex
     }));
-
+    if(band){
+      res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
+    }
 }
 
 function replace(req,res,next){

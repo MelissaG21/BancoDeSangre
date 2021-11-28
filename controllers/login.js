@@ -14,8 +14,6 @@ function home(req, res, next){
     //res.sendFile(path.resolve(__dirname,'../views/hola.html'));
 }
 
-
-
 function inicio(req, res, next){
     let correo = req.body.correo;
     let password = req.body.password; 
@@ -30,9 +28,18 @@ function inicio(req, res, next){
             bcript.hash(password,result.user.salt, (err,hash)=>{
                 if(hash === result.user.password){
                     if(result.user.tipoUsuario == "Donante"){
+                        /*res.status(200).render('inicioDonante', {userid: result.user.id}, function(err, html){
+                            res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
+                        });*/
+                        //res.status(200).render('index', {title: result.user.id});
                         res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
                     }else{
-                        res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+                        /*res.status(200).render('inicioPersonal', {userid: result.user.id}, function(err, html){
+                            res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+                        });*/
+                        //res.status(200).render('index', {title: result.user.id});
+                        //res.status(200).render('inicioPersonal', {userid: result.user.id});
+                        res.status(200).sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
                     }
                 }else{
                     res.status(403).json({
