@@ -16,7 +16,7 @@ function home(req, res, next){
 
 function inicio(req, res, next){
     let correo = req.body.correo;
-    let password = req.body.password; 
+    let password = req.body.password;
     //res.sendFile(path.resolve(__dirname,'../views/hola.html'));
 
     async.parallel({
