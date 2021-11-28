@@ -40,8 +40,9 @@ function create(req, res, next){
         tipoSangre: tipoSangre
     });
 
-    donante.save().then(obj => res.status(200)).catch(ex => res.status(500).json({
-      message: 'No se pudo almacenar el donante.',
+    donante.save().then(obj => res.redirect(`../users/${obj._id}/Donante`)
+    ).catch(ex => res.status(500).json({
+      message: 'No se pudo almacenar el personal.',
       obj: ex
     }));
 }

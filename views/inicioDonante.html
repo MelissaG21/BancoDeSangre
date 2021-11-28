@@ -4,13 +4,25 @@
     <link rel="stylesheet" href="/stylesheets/inicioDonante.css">
     <link rel="shortcut icon" href="/images/logo1.png">
     <title>Bienvenido donante</title>
+    <script>
+      function obtener(){
+          var cadenaDeTexto = window.location.href;
+          var ultimoSlash = cadenaDeTexto.lastIndexOf("/"); 
+          var esteno = cadenaDeTexto.substring(0, ultimoSlash);
+          console.log(esteno)
+          var sigSlash = esteno.lastIndexOf("/"); 
+          esteno = cadenaDeTexto.substring(sigSlash+1, ultimoSlash);
+          esteno = "/citas/"+esteno;
+          window.location=esteno;
+      }  
+    </script>
   </head>
   <body>
     <div id="container">
         <a href="/"><img id="logo" src="/images/Logo.jpg"></a>
         <h1>Bienvenido Heroe Donante</h1>
     </div>
-
+      <!--<%=userid%=>-->
 
 
         <center>
@@ -28,7 +40,7 @@
                   <td style="border: hidden">
                     <center>
                       <h2 class="title">¿Quieres agendar tu cita?</h2>
-                      <button onclick="window.location.href='/citas'"type="button" name="Registrarse" class="input submit">Agendar Cita</button>
+                      <button onclick="obtener()"type="button" name="Registrarse" class="input submit">Agendar Cita</button>
                     </center>
                   </td>
                 </tr>

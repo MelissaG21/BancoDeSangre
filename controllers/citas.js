@@ -18,7 +18,7 @@ function index(req,res,next){
 }
 
 function create(req,res,next){
-    const idDonador = req.body.idDonador;
+    const idDonador = req.params.idDonador;
     const fecha = req.body.fecha;
     const tipoSangre =req.body.tipoSangre;
     const nombreHospital = req.body.nombreHospital;
@@ -31,14 +31,17 @@ function create(req,res,next){
     });
 
     let band = false;
-    cita.save().then(band=true).catch(ex => res.status(500).json({
+    cita.save().then(band = true)/*then(obj => res.status(200).json({
+      message: 'Cita almacenada correctamente.',
+      obj: obj
+    }))*/.catch(ex => res.status(500).json({
       message: 'No se pudo almacenar la cita.',
       obj: ex
     }));
     if(band){
       res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
     }
-}
+  }
 
 function replace(req,res,next){
   const id = req.params.id;

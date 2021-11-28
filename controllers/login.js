@@ -14,25 +14,32 @@ function home(req, res, next){
     //res.sendFile(path.resolve(__dirname,'../views/hola.html'));
 }
 
-
-
 function inicio(req, res, next){
     let correo = req.body.correo;
-    let password = req.body.password; 
+    let password = req.body.password;
     //res.sendFile(path.resolve(__dirname,'../views/hola.html'));
 
     async.parallel({
         user: callback => User.findOne({_correo:correo})
-        .select('_password _salt _tipoUsuario')
+        .select('_password _salt _tipoUsuario _idUsuario')
         .exec(callback)
     },(err,result)=>{
         if(result.user){
             bcript.hash(password,result.user.salt, (err,hash)=>{
                 if(hash === result.user.password){
                     if(result.user.tipoUsuario == "Donante"){
-                        res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
+                        /*res.status(200).render('inicioDonante', {userid: result.user.id}, function(err, html){
+                            res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
+                        });*/
+                        //res.status(200).render('index', {title: result.user.id});
+                        res.redirect(`../inicioDonante/${result.user.idUsuario}/`);
                     }else{
-                        res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+                        /*res.status(200).render('inicioPersonal', {userid: result.user.id}, function(err, html){
+                            res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+                        });*/
+                        //res.status(200).render('index', {title: result.user.id});
+                        //res.status(200).render('inicioPersonal', {userid: result.user.id});
+                        res.redirect(`../inicioPersonal/${result.user.idUsuario}/`);
                     }
                 }else{
                     res.sendFile(path.resolve(__dirname,'../views/login.html'));

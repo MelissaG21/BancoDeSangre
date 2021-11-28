@@ -5,6 +5,12 @@
   <link rel="shortcut icon" href="/images/logo1.png">
   <meta name="viewport" content="width=device-width", initial-scale="1.0">
   <title>Agendar Cita</title>
+  <script>
+    function obterURL(){
+      var URLactual = window.location;
+      return URLactual;
+    }
+  </script>
 </head>
 <body>
   <div id="container">
@@ -17,8 +23,7 @@
         <!--en action iría la página de la sesión ya iniciada--->
 
 
-                  <form class="log-in" action="/citas" method="post">
-                      <p>ID Donador:&nbsp;<input class="input" type="text" name="idDonador" required/></p>
+                  <form class="log-in" onSubmit="return obterURL()"method="post">
                       <p>Fecha:&nbsp;<input class="input" type="date" name="fecha" required /></p>
                       <p id="solo">Tipo de sangre:&nbsp; &nbsp;&nbsp;
                           <select name="tipoSangre" id="sangre" class="input">

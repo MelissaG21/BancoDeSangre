@@ -3,6 +3,6 @@ var router = express.Router();
 const controller = require('../controllers/iPersonal');
 
 /* GET home page. */
-router.get('/', controller.home);
+router.get('/:idUsuario', controller.home);
 
 module.exports = router;

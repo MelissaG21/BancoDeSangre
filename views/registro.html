@@ -31,8 +31,8 @@
                         <form class="log-in" action="/donantes" method = "post" id="formu">
                           <p>Nombre:&nbsp;<input class="input" type="text" name="nombre" required  />
                           <p>Apellido:&nbsp;<input class="input"  type="text" name="apellido" required />
-                          <p>Edad:&nbsp;<input class="input" type="text" name="edad"  required  />
-                          <p>Peso(kg):&nbsp;<input class="input" type="text" name="peso" required />
+                          <p>Edad:&nbsp;<input class="input" type="number" name="edad"  required  />
+                          <p>Peso(kg):&nbsp;<input class="input" type="number" name="peso" required />
                           <p>Direccion:&nbsp;<input class="input" type="text" name="direccion" required/>
                             <p>&iquest;Cuenta usted con algún tatuaje?
                                 <select name="tatuajes" id="tatuaje" class="input">
@@ -60,20 +60,6 @@
 
                             <p ><button class="input submit" name="BD" type="submit" onclick="c.disabled = false;p.disabled = false;">Registrar datos</button></p>
                         </form>
-                      </center>
-                    </td>
-
-                    <td style="border: hidden">
-                      <center>
-                        <form class="log-in" action="/users" method = "post">
-                          <p>Correo:&nbsp;<input class="input" type="email" name="correo" id="c" required disabled/>
-                          <p>Contraseña:&nbsp;<input class="input" type="password" name="password" id="p" required disabled/>
-                          <p>&nbsp;</p>
-                          <input name="tipoUsuario" type="hidden" type="text" value="Donante">
-                          <button class="input submit" type="submit" name="BU" value="Crear Usuario">Crear Usuario</button>
-                        </form>
-
-
                       </center>
                     </td>
                   </tr>
