@@ -21,7 +21,7 @@ function inicio(req, res, next){
 
     async.parallel({
         user: callback => User.findOne({_correo:correo})
-        .select('_password _salt _tipoUsuario')
+        .select('_password _salt _tipoUsuario _idUsuario')
         .exec(callback)
     },(err,result)=>{
         if(result.user){
@@ -32,14 +32,14 @@ function inicio(req, res, next){
                             res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
                         });*/
                         //res.status(200).render('index', {title: result.user.id});
-                        res.status(200).sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
+                        res.redirect(`../inicioDonante/${result.user.idUsuario}/`);
                     }else{
                         /*res.status(200).render('inicioPersonal', {userid: result.user.id}, function(err, html){
                             res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
                         });*/
                         //res.status(200).render('index', {title: result.user.id});
                         //res.status(200).render('inicioPersonal', {userid: result.user.id});
-                        res.status(200).sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+                        res.redirect(`../inicioPersonal/${result.user.idUsuario}/`);
                     }
                 }else{
                     res.status(403).json({
