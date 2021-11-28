@@ -42,7 +42,6 @@ map['user'] = userAblility; */
           })
         }
   })*/
-
   let page = req.params.page ? req.params.page: 1;
   User.paginate({}, {page:page, limit:3}).then(objs => res.status(200).json({
     message: 'Lista de usuarios del sistema',
@@ -56,20 +55,22 @@ map['user'] = userAblility; */
 
 
 function index(req,res,next){
-  const id = req.params.id;
+  /*const id = req.params.id;
   User.findOne({"_id":id}).then(obj => res.status(200).json({
     message: `Usuario almacenado con ID ${id}`,
     obj: obj
   })).catch(ex => res.status(500).json({
     message: `No se pudo consultar la información del usuario con ID ${id}`,
     obj: ex
-  })); 
+  })); */
+  res.sendFile(path.resolve(__dirname,'../views/registroUsuario.html'));
 }
 
 function create(req,res,next){
     let correo = req.body.correo;
     let password = req.body.password;
-    let tipoUsuario = req.body.tipoUsuario;
+    let tipoUsuario = req.params.tipoUsuario;
+    let idUsuario = req.params.idUsuario;
     let profiles = req.body.profiles;
 
     async.parallel({
@@ -83,10 +84,11 @@ function create(req,res,next){
           password:hash,
           tipoUsuario:tipoUsuario,
           profiles:profiles,
-          salt:result.salt
+          salt:result.salt,
+          idUsuario:idUsuario
         });
-        let band = false;
-        user.save().then(band=true).catch(ex => res.status(500).json({
+        //let band = false;
+        user.save().then(band = true).catch(ex => res.status(500).json({
           message: 'No se pudo almacenar el usuario.',
           obj: ex
         }));

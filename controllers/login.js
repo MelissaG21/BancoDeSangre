@@ -32,7 +32,7 @@ function inicio(req, res, next){
                             res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
                         });*/
                         //res.status(200).render('index', {title: result.user.id});
-                        res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
+                        res.status(200).sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
                     }else{
                         /*res.status(200).render('inicioPersonal', {userid: result.user.id}, function(err, html){
                             res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));

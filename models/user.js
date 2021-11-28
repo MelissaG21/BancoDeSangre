@@ -5,7 +5,8 @@ const schema = mongoose.Schema({
   _correo: String,
   _password: String,
   _tipoUsuario:String,
-  _salt:String
+  _salt:String,
+  _idUsuario:mongoose.Types.ObjectId
   /* _profiles: [{
     type: mongoose.Schema.ObjectId, ref: 'Profile'
   }] */
@@ -18,6 +19,7 @@ class User{
     this._password = password;
     this._tipoUsuario = tipoUsuario;
     this._salt = salt;
+    this._idUsuario = idUsuario
     //this._profiles = profiles;
   }
 
@@ -53,14 +55,13 @@ class User{
     this._salt = v;
   }
 
-  /* get profiles(){
-    return this._profiles;
+  get idUsuario(){
+    return this._idUsuario;
   }
 
-  set profiles(v){
-      this._profiles = v;
-  } */
-
+  set idUsuario(v){
+      this._idUsuario = v;
+  } 
 }
 
 schema.loadClass(User);

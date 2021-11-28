@@ -2,6 +2,7 @@ const express =require('express');
 const Personal = require('../models/personal');
 const User = require('../models/user');
 const path = require('path');
+const mongoose = require('mongoose');
 function pagina(req, res, next) {
   res.sendFile(path.resolve(__dirname,'../views/registroP.html'));
 }
@@ -21,13 +22,16 @@ function create(req,res,next){
     const nombre = req.body.nombre;//implicitos o sobre el cuerpo
     const apellido = req.body.apellido;
     const nombreHospital = req.body.nombreHospital;
+    let id = mongoose.Types.ObjectId
 
     let personal = new Personal({
       nombre: nombre,
       apellido: apellido,
       nombreHospital: nombreHospital
     });
-    personal.save().catch(ex => res.status(500).json({
+
+    personal.save().then(obj => res.redirect(`../users/${obj._id}/Personal`)
+    ).catch(ex => res.status(500).json({
       message: 'No se pudo almacenar el personal.',
       obj: ex
     }));
