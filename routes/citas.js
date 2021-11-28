@@ -3,13 +3,11 @@ const router = express.Router();
 const controller = require('../controllers/citas');
 
 /* GET users listing. */
-router.get('/', controller.pagina);
+router.get('/:idDonador', controller.pagina);
 
-//router.get('/', controller.list);
+//router.get('/:id',controller.create);
 
-router.get('/:id',controller.index);
-
-router.post('/',controller.create);
+router.post('/:idDonador',controller.create);
 
 router.put('/:id',controller.replace);
 

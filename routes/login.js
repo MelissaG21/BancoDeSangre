@@ -5,6 +5,6 @@ const controller = require('../controllers/login');
 /* GET home page. */
 router.get('/', controller.home);
 
-router.post('/inicio', controller.inicio);
+router.post('/inicio/:idUsuario', controller.inicio);
 
 module.exports = router;

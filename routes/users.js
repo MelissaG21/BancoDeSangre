@@ -5,9 +5,9 @@ const controller = require('../controllers/users');
 /* GET users listing. */
 router.get('/', controller.list);
 
-router.get('/:id',controller.index);
+router.get('/:idUsuario/:tipoUsuario',controller.index);
 
-router.post('/',controller.create);
+router.post('/:idUsuario/:tipoUsuario',controller.create);
 
 router.put('/:id',controller.replace);
 
