@@ -35,15 +35,11 @@ function inicio(req, res, next){
                         res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
                     }
                 }else{
-                    res.status(403).json({
-                        "message":"Usuarios y/o contraseña incorrectos.", obj:null
-                    });
+                    res.sendFile(path.resolve(__dirname,'../views/login.html'));
                 }
             })
         }else{
-            res.status(403).json({
-                "message":"Usuarios y/o contraseña incorrectos.", obj:null
-            });
+            res.sendFile(path.resolve(__dirname,'../views/login.html'));
         }
     });
 }
