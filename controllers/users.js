@@ -13,9 +13,11 @@ const { BADNAME } = require('dns');
 map['admin'] = adminAbility;
 map['user'] = userAblility; */
 
+function pagina(req, res, next) {
+  res.sendFile(path.resolve(__dirname,'../views/users.html'));
+}
 
-
- function list(req, res, next) {
+ /*function list(req, res, next) {
   /*let id = req.body.id;
   let user = await User.findOne({"_id":id});
   let profileName;
@@ -41,7 +43,7 @@ map['user'] = userAblility; */
               obj: error
           })
         }
-  })*/
+  })
   let page = req.params.page ? req.params.page: 1;
   User.paginate({}, {page:page, limit:3}).then(objs => res.status(200).json({
     message: 'Lista de usuarios del sistema',
@@ -50,9 +52,7 @@ map['user'] = userAblility; */
     message: 'No se pudo consultar la información del usuario',
     obj: ex
   }));
-}
-
-
+}*/
 
 function index(req,res,next){
   /*const id = req.params.id;
@@ -175,5 +175,5 @@ function destroy(req,res,next){
 }
 
 module.exports ={
-    list, index,create,edit,replace,destroy
+    pagina, index,create,edit,replace,destroy
 }

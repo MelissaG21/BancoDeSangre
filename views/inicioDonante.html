@@ -15,6 +15,16 @@
           esteno = "/citas/"+esteno;
           window.location=esteno;
       }  
+      function obtenerEliminar(){
+          var cadenaDeTexto = window.location.href;
+          var ultimoSlash = cadenaDeTexto.lastIndexOf("/"); 
+          var esteno = cadenaDeTexto.substring(0, ultimoSlash);
+          console.log(esteno)
+          var sigSlash = esteno.lastIndexOf("/"); 
+          esteno = cadenaDeTexto.substring(sigSlash+1, ultimoSlash);
+          esteno = "/users/"+esteno;
+          window.location=esteno;
+      }  
     </script>
   </head>
   <body>
@@ -42,6 +52,13 @@
                       <h2 class="title">¿Quieres agendar tu cita?</h2>
                       <button onclick="obtener()"type="button" name="Registrarse" class="input submit">Agendar Cita</button>
                     </center>
+
+
+                    <center>
+                      <h2 class="title">Eliminar cuenta</h2>
+                        <button onclick="obtenerEliminar()"type="button" name="Eliminar" class="input submit">Eliminar cuenta</button>
+                    </center>
+
                   </td>
                 </tr>
               </tbody>

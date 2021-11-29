@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/agendarCita.css">
+  <link rel="shortcut icon" href="/images/logo1.png">
+  <meta name="viewport" content="width=device-width", initial-scale="1.0">
+  <title>Agendar Cita</title>
+  <script>
+    function obterURL(){
+      var URLactual = window.location;
+      return URLactual;
+    }
+  </script>
+</head>
+<body>
+  <div id="container">
+      <a href="/"><img id="logo" src="/images/Logo.jpg"></a>
+      <h1>Agenda tu cita para donacion</h1>
+  </div>
+
+
+  <div id="container2">
+        <!--en action iría la página de la sesión ya iniciada--->
+
+                  <form class="log-in" onSubmit="return obterURL()" method="delete">
+                    <h1>Estas seguro de eliminar tu cuenta?</h1>
+                      <input class="input submit" type="submit", value="Eliminar">
+                  </form>
+
+  </div>
+
+    <footer>
+          <a href="/login"><img id="flechaRegreso" src="/images/flechaRegreso.png"></a>
+    </footer>
+</body>
+</html>

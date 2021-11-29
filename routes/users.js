@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require('../controllers/users');
 
 /* GET users listing. */
-router.get('/', controller.list);
+router.get('/:idDonador', controller.pagina);
 
 router.get('/:idUsuario/:tipoUsuario',controller.index);
 
@@ -13,6 +13,6 @@ router.put('/:id',controller.replace);
 
 router.patch('/:id',controller.edit);
 
-router.delete('/:id',controller.destroy);
+router.delete('/:idDonador',controller.destroy);
 
 module.exports = router;
