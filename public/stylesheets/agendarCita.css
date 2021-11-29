@@ -60,6 +60,10 @@ h1{
 	padding: 20;
 }
 
+#solo{
+  margin: 3;
+}
+
 .log-in {
   position: relative;
   width: 18rem;
@@ -112,6 +116,24 @@ h1{
 
 .submit:hover {
   background: #10C0FF;
+}
+
+.codigo{
+  font-size: 14px;
+}
+
+h3{
+  color: black;
+}
+
+main {
+  box-sizing: border-box;
+  width: 350;
+	background-color: #f7f7f7;
+	padding: 20px;
+	border-radius: 10px;
+	color: #3a3e40;
+  font-size: 14px
 }
 
 p{
