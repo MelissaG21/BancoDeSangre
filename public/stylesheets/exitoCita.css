@@ -85,11 +85,11 @@ h1{
   font-weight: 500;
   cursor: pointer;
   color: black;
-  background: #999d9e;
+  background: #9cdaf0;
   transition: 200ms;
   box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
 }
 
 .submit:hover {
-  background: #babebf;
+  background: #10C0FF;
 }
