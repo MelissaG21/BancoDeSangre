@@ -8,15 +8,14 @@
 </head>
 <body>
     <h1>Manda su Reconocimiento al nuevo Heroe</h1>
-    <form method="post">
-        <input type="text" placeholder="name" name="name" required="">
-        <input type="email" placeholder="email" name="email" required="">
+    <form action="/correos" method="post">
+        <input type="text" placeholder="nombre" name="firstname" required="">
+        <input type="text" placeholder="apellido" name="lastname" required="">
+        <input type="email" placeholder="email" name="emailaddress" required="">
         <input type="text" placeholder="asunto" name="asunto" required="">
-        <input type="file" placeholder="mensaje" name="msg" required="">
+        <input type="file" placeholder="mensaje" name="file" required="">
+        <br>
         <input type="submit" placeholder="mensaje" name="enviar">
     </form>
-    <?php
-    include("controllers/correo.php");
-    ?>
 </body>
 </html>

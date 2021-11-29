@@ -1,6 +1,7 @@
 // Use at least Nodemailer v4.1.0
 const express = require("express");
 const nodemailer = require('nodemailer');
+const path = require('path');
 
 // Generate SMTP service account from ethereal.email
 /* nodemailer.createTestAccount((err, account) => {
@@ -41,7 +42,9 @@ const nodemailer = require('nodemailer');
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
 }); */
-
+function home(req, res, next){
+    res.sendFile(path.resolve(__dirname,'../views/sendEmail.html'));
+}
 var transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
@@ -55,21 +58,23 @@ function send(req, res, next){
     // Obtener los parámetros pasados ​​por el front end
     var emailaddress = req.body.emailaddress;
     var firstname = req.body.firstname;
-    var imgurl = req.body.imgurl;
+    //var imgurl = req.body.imgurl;
     var lastname = req.body.lastname;
+    var asunto = req.body.asunto;
+    var file = req.body.file
 
     var sendHtml = `<div>
         <div>firstName : ${firstname}</div>
         <div>lastname : ${lastname}</div>
         <div>emailaddress : ${emailaddress}</div>
-        <div>file : <a href="${imgurl}">down upload file</a> </div>
-    </div>`;
+        <div>file : <a href="${file}">down upload file</a> </div>
+    </div>`; 
     
     var message = {
         from: 'Sender Name <wade.welch45@ethereal.email>',
         to: emailaddress,
-        subject: 'Nodemailer is unicode friendly ✔',
-        text: 'Hello to myself!',
+        subject: asunto,
+        text: 'Hola heroe',
         html: sendHtml
     };
 
@@ -86,5 +91,5 @@ function send(req, res, next){
 }
 
 module.exports = {
-    send
+    send,home
 }
