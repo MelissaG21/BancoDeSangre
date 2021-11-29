@@ -39,7 +39,7 @@ function create(req,res,next){
       obj: ex
     }));
     if(band){
-      res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
+      res.sendFile(path.resolve(__dirname,'../views/citaAgendadaExito.html'));
     }
   }
 

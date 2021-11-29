@@ -37,7 +37,7 @@ function create(req, res, next){
       obj: ex
     }));
     if(band){
-      res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
+      res.sendFile(path.resolve(__dirname,'../views/unidadesAgendadasExito.html'));
     }
 }
 
