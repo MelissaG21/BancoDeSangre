@@ -168,12 +168,23 @@ function edit(req,res,next){
 
 function destroy (req,res,next){
   const id = req.params.id;
-  User.remove({"_id":id}).then(obj => 
-    res.status(200).sendFile(path.resolve(__dirname,'../views/paginaInicio.html'))
-  ).catch(ex => res.status(500).json({
-    message: 'No se pudo eliminar el usuario',
-    obj: ex
-  }));/*
+  const tipoUsuario = req.params.tipoUsuario;
+  if(tipoUsuario == "Donante"){
+    User.remove({"_idUsuario":id}).then(obj => 
+      res.status(200).redirect(`../donantes/${id}`)
+    ).catch(ex => res.status(500).json({
+      message: 'No se pudo eliminar el usuario',
+      obj: ex
+    }));
+  }else{
+    User.remove({"_idUsuario":id}).then(obj => 
+      res.status(200).sendFile(path.resolve(__dirname,'../views/paginaInicio.html'))
+    ).catch(ex => res.status(500).json({
+      message: 'No se pudo eliminar el usuario',
+      obj: ex
+    }));
+  }
+ /*
   User.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) {
             res.redirect('/users/_id');

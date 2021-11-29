@@ -6,7 +6,7 @@ const controller= require('../controllers/donantes');
 /* GET users listing.  /users/ */
 router.get('/', controller.pagina);
 
-router.get('/:id', controller.index);
+router.get('/:id', controller.destroy);
 
 router.post('/', controller.create);
 

@@ -128,13 +128,10 @@ function edit(req, res, next){
 
 function destroy(req, res, next){
   const id = req.params.id;
-    Donante.remove({"_id":id}).then(obj => res.status(200).json({
-      message:"Donante eliminado correctamente",
-      obj:obj
-    })).catch(ex => res.status(500).json({
-      message: 'No se pudo eliminar el donante',
-      obj: ex
-    }));
+  Donante.remove({"_id":id}).then(obj => res.redirect(`../users/${id}`)).catch(ex => res.status(500).json({
+    message: 'No se pudo eliminar el donante',
+    obj: ex
+  }));
 
 }
 

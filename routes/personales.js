@@ -5,7 +5,7 @@ const controller = require('../controllers/personal');
 /* GET users listing. */
 router.get('/', controller.pagina);
 
-router.get('/:id',controller.pagina);
+router.get('/:id',controller.destroy);
 
 router.post('/',controller.create);
 
