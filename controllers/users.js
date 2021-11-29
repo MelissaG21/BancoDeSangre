@@ -9,6 +9,7 @@ const Permission = require('../models/permission');
 const path = require('path');
 const { BADNAME } = require('dns');
 
+
 /* var map = {}
 map['admin'] = adminAbility;
 map['user'] = userAblility; */
@@ -53,6 +54,8 @@ function pagina(req, res, next) {
     obj: ex
   }));
 }*/
+
+
 
 function index(req,res,next){
   /*const id = req.params.id;
@@ -163,16 +166,24 @@ function edit(req,res,next){
 
 }
 
-function destroy(req,res,next){
-  const id = req.params.id;
-  User.remove({"_id":id}).then(obj => res.status(200).json({
+function destroy (req,res,next){
+  User.findByIdAndRemove(req.params.id, (err, doc) => {
+        if (!err) {
+            res.redirect('/users/_id');
+        } else {
+            console.log('Failed to Delete user Details: ' + err);
+        }
+
+  /*User.remove({"_id":id}).then(obj => res.status(200).json({
     message:"Usuario eliminado correctamente",
     obj:obj
   })).catch(ex => res.status(500).json({
     message: 'No se pudo eliminar el usuario',
     obj: ex
-  }));
+  }));*/
+
 }
+)};
 
 module.exports ={
     pagina, index,create,edit,replace,destroy
