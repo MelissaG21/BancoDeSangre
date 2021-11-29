@@ -88,6 +88,22 @@ h1{
   box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
 }
 
+.submite {
+  width: 200;
+  margin-bottom: .6rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: black;
+  background: #f52f2f;
+  transition: 200ms;
+  box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+  float: right;
+}
+
 .submit:hover {
   background: #10C0FF;
+}
+
+.submite:hover {
+  background: #f05959;
 }
