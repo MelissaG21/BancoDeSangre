@@ -17,6 +17,6 @@ router.put('/:id',controller.replace);
 
 router.patch('/:id',controller.edit);
 
-router.delete('/:idDonador',controller.destroy);
+router.delete('/:id',controller.destroy);
 
 module.exports = router;

@@ -4,6 +4,18 @@
     <link rel="stylesheet" href="/stylesheets/inicioPersonal.css">
     <link rel="shortcut icon" href="/images/logo1.png">
     <title>Bienvenido Personal Medico</title>
+    <script>
+      function obtenerEliminar(){
+          var cadenaDeTexto = window.location.href;
+          var ultimoSlash = cadenaDeTexto.lastIndexOf("/"); 
+          var esteno = cadenaDeTexto.substring(0, ultimoSlash);
+          console.log(esteno)
+          var sigSlash = esteno.lastIndexOf("/"); 
+          esteno = cadenaDeTexto.substring(sigSlash+1, ultimoSlash);
+          esteno = "/users/"+esteno;
+          window.location=esteno;
+      }  
+    </script>
   </head>
   <body>
     <div id="container">
@@ -27,6 +39,11 @@
                 <center>
                   <h2 class="title">¿Necesitas unidades?</h2>
                   <button onclick="window.location.href='/unidades'"type="button" name="unidades" class="input submit">Registrar unidades</button>
+                </center>
+
+                <center>
+                  <h2 class="title">Eliminar cuenta</h2>
+                    <button onclick="obtenerEliminar()"type="button" name="Eliminar" class="input submit">Eliminar cuenta</button>
                 </center>
               </td>
             </tr>

@@ -32,14 +32,14 @@ function inicio(req, res, next){
                             res.sendFile(path.resolve(__dirname,'../views/inicioDonante.html'));
                         });*/
                         //res.status(200).render('index', {title: result.user.id});
-                        res.redirect(`../inicioDonante/${result.user.idUsuario}/`);
+                        res.redirect(`../inicioDonante/${result.user.id}/`);
                     }else{
                         /*res.status(200).render('inicioPersonal', {userid: result.user.id}, function(err, html){
                             res.sendFile(path.resolve(__dirname,'../views/inicioPersonal.html'));
                         });*/
                         //res.status(200).render('index', {title: result.user.id});
                         //res.status(200).render('inicioPersonal', {userid: result.user.id});
-                        res.redirect(`../inicioPersonal/${result.user.idUsuario}/`);
+                        res.redirect(`../inicioPersonal/${result.user.id}/`);
                     }
                 }else{
                     res.sendFile(path.resolve(__dirname,'../views/login.html'));

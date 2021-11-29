@@ -167,6 +167,13 @@ function edit(req,res,next){
 }
 
 function destroy (req,res,next){
+  const id = req.params.id;
+  User.remove({"_id":id}).then(obj => 
+    res.status(200).sendFile(path.resolve(__dirname,'../views/paginaInicio.html'))
+  ).catch(ex => res.status(500).json({
+    message: 'No se pudo eliminar el usuario',
+    obj: ex
+  }));/*
   User.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) {
             res.redirect('/users/_id');
@@ -182,8 +189,7 @@ function destroy (req,res,next){
     obj: ex
   }));*/
 
-}
-)};
+};
 
 module.exports ={
     pagina, index,create,edit,replace,destroy
